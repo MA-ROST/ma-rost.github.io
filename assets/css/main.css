@@ -5,6 +5,19 @@
 	Verti by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+
+	#00B3BC
+
+	BG = #31363F
+	Accent = #222831
+
+	Text = #EEEEEE
+
+	LA = #00B3BC
+
+	#009AA3
+	#007A80
 */
 
 html, body, div, span, applet, object,
@@ -23,7 +36,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -72,6 +86,21 @@ input, select, textarea {
 	appearance: none;
 }
 
+
+.urmom {
+    background: #222831;
+    border-radius: 6px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+    padding: 2em;
+}
+
+row.box {
+	background: #222831;
+	border-radius: 6px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+    padding: 2em;
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -86,21 +115,21 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-color: #f7f7f7;
-		background-position: top left, top left;
-		background-repeat: repeat-x, repeat;
-		background-size: 100% 30em, auto;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 13pt;
-		color: #696969;
-		font-weight: 300;
-		line-height: 2.25em;
-	}
+body {
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-color: #31363F;
+	background-position: top left, top left;
+	background-repeat: repeat-x, repeat;
+	background-size: 100% 30em, auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13pt;
+	color: #EEEEEE;
+	font-weight: 300;
+	line-height: 2.25em;
+}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -113,27 +142,27 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-	input, select, textarea {
-		font-family: 'Open Sans', sans-serif;
-		font-size: 13pt;
-		color: #696969;
-		font-weight: 300;
-		line-height: 2.25em;
-	}
+input, select, textarea {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13pt;
+	color: #EEEEEE;
+	font-weight: 300;
+	line-height: 2.25em;
+}
 
-	a {
-		color: #0090c5;
-		text-decoration: underline;
-	}
+a {
+	color: #00B3BC;
+	text-decoration: underline;
+}
 
 		a:hover {
 			text-decoration: none;
 		}
 
-	h1, h2, h3, h4, h5, h6 {
-		color: #444;
-		font-weight: 800;
-	}
+h1, h2, h3, h4, h5, h6 {
+	color: #bbbbbb;
+	font-weight: 800;
+}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
@@ -152,10 +181,10 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 	}
 
-	b, strong {
-		font-weight: 600;
-		color: #444;
-	}
+b, strong {
+	font-weight: 600;
+	color: #bbbbbb;
+}
 
 	i, em {
 		font-style: italic;
@@ -177,13 +206,13 @@ input, select, textarea {
 		font-size: 0.8em;
 	}
 
-	hr {
-		border: 0;
-		border-top: solid 1px #eee;
-	}
+hr {
+	border: 0;
+	border-top: solid 1px #111;
+}
 
 	blockquote {
-		border-left: solid 0.5em #eee;
+		border-left: solid 0.5em #111;
 		padding: 1em 0 1em 2em;
 		font-style: italic;
 	}
@@ -1491,7 +1520,7 @@ input, select, textarea {
 		font-weight: 800;
 		margin: 0 0 1em 0;
 		font-size: 0.8em;
-		color: #444;
+		color: #bbbbbb;
 	}
 
 	form input[type="text"],
@@ -1503,7 +1532,7 @@ input, select, textarea {
 		display: block;
 		width: 100%;
 		border-radius: 8px;
-		border: solid 1px #eee;
+		border: solid 1px #111;
 	}
 
 		form input[type="text"]:focus,
@@ -1511,7 +1540,7 @@ input, select, textarea {
 		form input[type="password"]:focus,
 		form select:focus,
 		form textarea:focus {
-			border-color: #0090c5;
+			border-color: #00B3BC;
 		}
 
 	form input[type="text"],
@@ -1532,20 +1561,20 @@ input, select, textarea {
 	}
 
 	form ::-webkit-input-placeholder {
-		color: #555 !important;
+		color: #aaa !important;
 	}
 
 	form :-moz-placeholder {
-		color: #555 !important;
+		color: #aaa !important;
 	}
 
-	form ::-moz-placeholder {
-		color: #555 !important;
-	}
+form ::-moz-placeholder {
+	color: #aaa !important;
+}
 
-	form :-ms-input-placeholder {
-		color: #555 !important;
-	}
+form :-ms-input-placeholder {
+	color: #aaa !important;
+}
 
 	form ::-moz-focus-inner {
 		border: 0;
@@ -1558,7 +1587,7 @@ input, select, textarea {
 	}
 
 		table tr {
-			border-top: solid 1px #eee;
+			border-top: solid 1px #111111;
 		}
 
 			table tr:first-child {
@@ -1622,29 +1651,29 @@ input, select, textarea {
 
 /* Button */
 
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"],
-	button,
-	.button {
-		-moz-transition: background-color .25s ease-in-out;
-		-webkit-transition: background-color .25s ease-in-out;
-		-ms-transition: background-color .25s ease-in-out;
-		transition: background-color .25s ease-in-out;
-		-webkit-appearance: none;
-		position: relative;
-		display: inline-block;
-		background: #0090c5;
-		color: #fff;
-		text-decoration: none;
-		border-radius: 6px;
-		font-weight: 800;
-		outline: 0;
-		border: 0;
-		cursor: pointer;
-		font-size: 1.35em;
-		padding: 0.6em 1.5em;
-	}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+	-webkit-appearance: none;
+	position: relative;
+	display: inline-block;
+	background: #009AA3;
+    color: #fff;
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: 800;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+	font-size: 1.35em;
+	padding: 0.6em 1.5em;
+}
 
 		input[type="button"].icon:before,
 		input[type="submit"].icon:before,
@@ -1656,21 +1685,21 @@ input, select, textarea {
 			top: 0.05em;
 		}
 
-		input[type="button"]:hover,
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		button:hover,
-		.button:hover {
-			background: #10a0d5;
-		}
+	input[type="button"]:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	button:hover,
+	.button:hover {
+		background: #007A80;
+	}
 
-		input[type="button"]:active,
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		button:active,
-		.button:active {
-			background: #20b0e5;
-		}
+	input[type="button"]:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	button:active,
+	.button:active {
+		background: #007A80;
+	}
 
 		input[type="button"].alt,
 		input[type="submit"].alt,
@@ -1679,7 +1708,7 @@ input, select, textarea {
 		.button.alt {
 			background: #f1f1f1;
 			background: rgba(0, 0, 0, 0.05);
-			color: #444;
+			color: #eee;
 		}
 
 			input[type="button"].alt:hover,
@@ -1778,12 +1807,12 @@ input, select, textarea {
 
 /* Box */
 
-	.box {
-		background: #fff;
-		border-radius: 6px;
-		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		padding: 2em;
-	}
+.box {
+	background: #222831;
+	border-radius: 6px;
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+	padding: 2em;
+}
 
 		.box.feature {
 			padding: 0;
@@ -1916,7 +1945,7 @@ input, select, textarea {
 	}
 
 	#main-wrapper {
-		background: #fff;
+		background: #222831;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 		padding: 5em 0 5em 0;
 	}
@@ -1997,11 +2026,11 @@ input, select, textarea {
 				}
 
 				#nav ul li:hover a, #nav ul li:hover span {
-					background: #fff;
+					background: #222831;
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
-					background: #fff;
+					background: #222831;
 				}
 
 				#nav ul li.current a {
@@ -2009,20 +2038,20 @@ input, select, textarea {
 					color: #fff;
 				}
 
-	.dropotron {
-		background: #fff;
-		letter-spacing: 0.025em;
-		color: #696969;
-		text-decoration: none;
-		border-radius: 6px;
-		padding: 0.75em 0;
-		min-width: 15em;
-		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0.25em 0.25em 0.1em rgba(0, 0, 0, 0.025);
-		margin-top: calc(-0.75em + 1px);
-		margin-left: -1px;
-		list-style: none;
-		padding-left: 0;
-	}
+.dropotron {
+	background: #222831;
+	letter-spacing: 0.025em;
+	color: #696969;
+	text-decoration: none;
+	border-radius: 6px;
+	padding: 0.75em 0;
+	min-width: 15em;
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0.25em 0.25em 0.1em rgba(0, 0, 0, 0.025);
+	margin-top: calc(-0.75em + 1px);
+	margin-left: -1px;
+	list-style: none;
+	padding-left: 0;
+}
 
 		.dropotron li {
 			border-top: solid 1px #eee;
@@ -2387,31 +2416,31 @@ input, select, textarea {
 						opacity: 0.75;
 					}
 
-			#navPanel {
-				-moz-backface-visibility: hidden;
-				-webkit-backface-visibility: hidden;
-				-ms-backface-visibility: hidden;
-				backface-visibility: hidden;
-				-moz-transform: translateX(-275px);
-				-webkit-transform: translateX(-275px);
-				-ms-transform: translateX(-275px);
-				transform: translateX(-275px);
-				-moz-transition: -moz-transform 0.5s ease;
-				-webkit-transition: -webkit-transform 0.5s ease;
-				-ms-transition: -ms-transform 0.5s ease;
-				transition: transform 0.5s ease;
-				display: block;
-				height: 100%;
-				left: 0;
-				overflow-y: auto;
-				position: fixed;
-				top: 0;
-				width: 275px;
-				z-index: 10002;
-				background: #fff;
-				box-shadow: inset -3px 0px 0px 0px #dfdfdf;
-				padding: 0 23px 0 20px;
-			}
+		#navPanel {
+			-moz-backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
+			-moz-transform: translateX(-275px);
+			-webkit-transform: translateX(-275px);
+			-ms-transform: translateX(-275px);
+			transform: translateX(-275px);
+			-moz-transition: -moz-transform 0.5s ease;
+			-webkit-transition: -webkit-transform 0.5s ease;
+			-ms-transition: -ms-transform 0.5s ease;
+			transition: transform 0.5s ease;
+			display: block;
+			height: 100%;
+			left: 0;
+			overflow-y: auto;
+			position: fixed;
+			top: 0;
+			width: 275px;
+			z-index: 10002;
+			background: #222831;
+            box-shadow: inset -3px 0px 0px 0px #EEEEEE;
+			padding: 0 23px 0 20px;
+		}
 
 				#navPanel .link {
 					display: block;
