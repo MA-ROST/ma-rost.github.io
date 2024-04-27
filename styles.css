@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sarpanch:wght@400;500;600;700;800;900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 
-* {box-sizing: border-box;}
+/* * {box-sizing: border-box;}
 
 body { 
   margin: 0;
@@ -62,3 +62,8 @@ body {
 .dark {
     
 }
+
+right {
+  float: right;
+} */
+
