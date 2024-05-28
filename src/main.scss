@@ -2,9 +2,48 @@
 // Option A: Include all of Bootstrap
 
 // Include any default variable overrides here (though functions won't be available)
-$primary: red;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 
 // Then add additional custom code here
+
+.portfolio-card-video{
+    position: relative;
+    display: inline-flex;
+  background-color: #252525;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+}
+
+.video-additional-info{
+    padding: 12px 24px;
+    display: flex;
+    position: relative;
+    font-size: .875rem;
+    color: #fff;
+}
+
+.video-data{
+    margin-right: 16px;
+}
+
+.porfolio-card-header{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  font-weight: 700 !important;
+  background-color: var(--bs-dark-bg-subtle) !important;
+}
+.porfolio-card-subheader{
+    color: var(--bs-secondary-color) !important;
+    font-weight: 400 !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+
+.expand:hover { transform:scale(1.05,1.05); transition: .3s ease-in-out; /*sexy speed of the transition*/ }
+
