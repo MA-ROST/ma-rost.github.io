@@ -12002,6 +12002,14 @@ textarea.form-control-lg {
   display: block !important;
 }
 
+.lg-width-constraint {
+  max-width: 45%;
+}
+
+.main-area-bg {
+  background-image: url("assets/Images/RCRBG.png");
+}
+
 .expand:hover {
   transform: scale(1.05, 1.05);
   transition: 0.3s ease-in-out; /*sexy speed of the transition*/
