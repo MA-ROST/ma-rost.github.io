@@ -12007,7 +12007,7 @@ textarea.form-control-lg {
 }
 
 .main-area-bg {
-  background-image: url("assets/Images/RCRBG.png");
+  background-color: var(--bs-secondary-bg) !important;
 }
 
 .expand:hover {

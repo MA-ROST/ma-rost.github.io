@@ -10,6 +10,10 @@
 
 // Then add additional custom code here
 
+.portfolio-card {
+
+}
+
 
 .portfolio-card-video{
     position: relative;
@@ -52,7 +56,7 @@
 }
 
 .main-area-bg{
-  background-image: url('assets/Images/RCRBG.png');
+  background-color: var(--bs-secondary-bg) !important;
 }
 
 .expand:hover { transform:scale(1.05,1.05); transition: .3s ease-in-out; /*sexy speed of the transition*/ }
