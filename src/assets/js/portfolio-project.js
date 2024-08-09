@@ -15,10 +15,12 @@ var projects = [
 		project_link: "https://dobibo.itch.io/rift-city-rebels",
 		prj_icon: "itch-io",
 		prj_notes: [
-			"Lead developer on the controller-to-UI system",
-			"Developed the Character Select UI Programmed Matcha/The Snowboarder",
-			"Lead the development of the audio systems",
-			"Game Manual Design",
+			"Lead UI Developer",
+			"> Created the Controller-To-UI system, allowing for both Keyboard and Game Controllers interact with menu's",
+			"> Developed Character Select UI, which allows multiple users to interact at once",
+			"Developer of Matcha/The Snowboarder character",
+			"> Assisted in creating movement based actions",
+			"Helped with designing the layout for the Game Manual",
 		],
 		prj_short_desc: "Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program."
 	},
@@ -58,11 +60,12 @@ var projects = [
 			dev_year: 2023,
 		},
 		video_link: "https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview",
-		project_link: "https://tinycoderknight.itch.io/goblin-hunt",
+		project_link: "null",
 		prj_icon: "itch-io",
 		prj_notes: [
-			"Gesture System",
-			"Teleportation System",
+			"Created a Gesture System that compares the controller's movement in relation to the headset determining the direction of motion.",
+			"> Used playtests feedback to create multiple iterations of the Gesture system.",
+			"Created a nav-mesh based teleportation system that would bring the zombie AI's with the player.",
 		],
 		prj_short_desc: "A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination."
 	},
@@ -79,7 +82,7 @@ var projects = [
 			dev_year: 2023,
 		},
 		video_link: "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
-		project_link: "https://tinycoderknight.itch.io/goblin-hunt",
+		project_link: "null",
 		prj_icon: "itch-io",
 		prj_notes: [
 			"Character Controller with double jump",
@@ -102,7 +105,7 @@ var projects = [
 			dev_year: 2023,
 		},
 		video_link: "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
-		project_link: "https://tinycoderknight.itch.io/goblin-hunt",
+		project_link: "null",
 		prj_icon: "itch-io",
 		prj_notes: [
 			"Character Controller",
