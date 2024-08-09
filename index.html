@@ -1,332 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>Marissa Rowles-Stewart</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-		<link rel="stylesheet" href="src/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="https://kit.fontawesome.com/70ccbae6dc.js" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<!-- NAV -->
-		<nav class="navbar navbar-expand-lg bg-body sticky-top" data-bs-theme="dark">
-			<div class="container-fluid">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Marissa Rowles-Stewart</title>
 
-				<a class="navbar-brand" href="#">Marissa Rowles-Stewart</a>
+	<link rel="stylesheet" href="src/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/70ccbae6dc.js" crossorigin="anonymous"></script>
+</head>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse d-flex" id="navbarSupportedContent" style="flex-grow: 0;">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#landing">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#portfolio-cards">Portfolio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#about">About Me</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- END NAV -->
-
+<body>
+	<!-- NAV -->
+	<nav id="header" class="sticky navbar navbar-toggleable-sm navbar-inverse header">
+		<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
+		<div id="headerContent" class="navbar-collapse" style="display: none"></div>
+		<ul class="navbar-nav navbar-right">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					<i class="fa-solid fa-bars fa-lg"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" style="position: absolute">
+					<li><a class="dropdown-item" href="#landing">Landing</a></li>
+					<li><a class="dropdown-item" href="#portfolio">Portfolio</a></li>
+					<li><a class="dropdown-item" href="#about">About Me</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<!-- END NAV -->
+	<div id="container" class="page-container">
 		<div data-bs-spy="scroll" class="main-area-bg">
-			<div class=" p-4" id="landing">
-				<div class="fs-3 text-center d-block mx-auto container-lg">
-					Hi, I'm Marissa (also known as TinyCoderKnight), <br />I'm a dedicated and passionate <strong>user-interface</strong> and <strong>gameplay</strong> developer straight out of college, who
-					loves developing games and helping bring ideas into an interactive space. <br />Below, you can find my work.
-				</div>
-				<div class="text-center mt-3">
-					<div class="badge text-bg-secondary fs-5">C#</div>
-					<div class="badge text-bg-secondary fs-5">C++</div>
-					<div class="badge text-bg-secondary fs-5">Java</div>
-					<div class="badge text-bg-secondary fs-5">Unity</div>
-					<div class="badge text-bg-secondary fs-5">Unreal Engine 5</div>
-					<div class="badge text-bg-secondary fs-5">UI Development</div>
-					<div class="badge text-bg-secondary fs-5">VR Gesture Development</div>
-				</div>
-			</div>
-			<!-- PORTFOLIO -->
-			<div class="p-4 mx-auto container-lg" id="portfolio-cards">
-				<h2 class="fw-bold text-center mb-4">Educational Projects</h2>
-				<div class="row mx-2">
-					<!--Rift City Rebels-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1rkr_A9cIafEQRnBg22-OXP6tkC0f4S8t/preview?muted=1"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
+			<div class="main">
+				<div class="container">
+					<div id="landing">
+						<p>
+							Hi, I'm Marissa, a game developer from Manitoba, Canada. <br />I'm a dedicated and
+							passionate
+							<strong>user-interface</strong> and <strong>gameplay</strong> programmer who recently
+							graduated
+							from college with a Advanced Diploma with Honours in Game Development - Programming.
+							I love learning new things so that I can aid in creating fun and inspiring experiences that
+							is
+							accessibile to everyone.
+						</p>
+						<h3 style="border-bottom: 2px solid #495057;">Skills</h3>
+						<ul>
+							<li><u>Languages</u><br>C++, C#, Java</li>
+							<li><u>Version Control Software</u><br>Perforce, Git</li>
+							<li><u>Project Management Tools</u><br>Trello, Pivotal Tracker, Notion</li>
+							<li><u>Design Tools</u><br>Figma, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe
+								Premiere Pro</li>
+							<li><u>Software</u><br>Visual Studio, Visual Studio Code, Apache Netbeans</li>
+							<li><u>Engines</u><br>Unreal Engine 5, Unity</li>
+						</ul>
+					</div>
+					<!-- Portfolio -->
+					<div id="portfolio">
+						<h1 style="border-bottom: 2px solid #495057;">Portfolio</h1>
+						<nav>
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<button class="nav-link active" id="nav-prog-port-tab" data-bs-toggle="tab"
+									data-bs-target="#nav-prog-port" type="button" role="tab"
+									aria-controls="nav-prog-port" aria-selected="true">Programming</button>
+								<button class="nav-link" id="nav-lvl-des-tab" data-bs-toggle="tab"
+									data-bs-target="#nav-lvl-des" type="button" role="tab" aria-controls="nav-lvl-des"
+									aria-selected="false" disabled>Level
+									Design</button>
 							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 18</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 4 Months</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unreal</div>
-							</div>
+						</nav>
+						<div class="tab-content p-2" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="nav-prog-port" role="tabpanel"
+								aria-labelledby="nav-prog-port-tab" tabindex="0">
 
-							<div class="px-4 py-4">
-								<a href="rcr.html" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Rift City Rebels
-										<small class="porfolio-card-subheader card-subtitle">Game Programmer</small>
-									</h2>
-								</a>
-
-								<p>
-									Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the
-									Game Development program.
-								</p>
-								<ul>
-									<li>Lead developer on the controller-to-UI system</li>
-									<li>Developed the Character Select UI</li>
-									<li>Programmed Matcha/The Snowboarder</li>
-									<li>Lead the development of the audio systems</li>
-								</ul>
+								<div class="portfolio-gallery row row-cols-1 row-cols-lg-2 g-2">
+								</div>
 							</div>
+							<div class="tab-pane fade" id="nav-lvl-des" role="tabpanel"
+								aria-labelledby="nav-lvl-des-tab" tabindex="0">TBA...</div>
 						</div>
-					</article>
-					<!--Rift City Rebels-->
-
-					<!--Zecromancer VR-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview?muted=1"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 9</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 6 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unreal</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="http://example.com" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Necromancer VR
-										<small class="porfolio-card-subheader card-subtitle">Game Programmer</small>
-									</h2>
-								</a>
-
-								<p>
-									A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination.
-								</p>
-								<ul>
-									<li>Gesture System</li>
-									<li>Teleportation System</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--Zecromancer-->
-
-					<!--Goblin Hunt-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 3</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 4 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unreal</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="http://example.com" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Goblin Hunt VR
-										<small class="porfolio-card-subheader card-subtitle">Solo Game Programmer</small>
-									</h2>
-								</a>
-
-								<p>
-									Goblin Hunt VR is an arcade style shooter where you must catch bombs shot by goblins and throw them
-									back at them to score points.
-								</p>
-								<ul>
-									<li>UI</li>
-									<li>Enemy AI</li>
-									<li>Bomb reactivity</li>
-									<li>Score Managers</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--Goblin Hunt-->
-
-					<!--2D Unity Controller-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 1</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 2 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unity2D</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="http://example.com" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Prototype The Platformer
-										<small class="porfolio-card-subheader card-subtitle">Solo Developer</small>
-									</h2>
-								</a>
-
-								<p>
-									A short game i created for an assignment to renforce our skills in mechanic and level design.<br />Key
-									features I contributed to were:
-								</p>
-								<ul>
-									<li>Character Controller with double jump</li>
-									<li>Checkpoint System</li>
-									<li>Turret enemies with customizable rates and speeds</li>
-									<li>Location based area obscurer</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--2D Unity Controller-->
-
-					<!--3D Unity Controller-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 1</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 2 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unity3D</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="http://example.com" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Drone Racer
-										<small class="porfolio-card-subheader card-subtitle">Solo Developer</small>
-									</h2>
-								</a>
-
-								<p>
-									A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to
-									create Starfox inspired character controllers
-								</p>
-								<ul>
-									<li>Character Controller</li>
-									<li>Score System</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--3D Unity Controller-->
-
-					<!--Fear The Abyss-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1zDrcg90Dcf6jEbucdIajZKKnFcIKgspA/preview"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 5</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 8 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unreal</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="https://dobibo.itch.io/fear-the-abyss" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Fear The Abyss
-										<small class="porfolio-card-subheader card-subtitle">Game Programmer</small>
-									</h2>
-								</a>
-
-								<p>
-									Fear the Abyss is a 2.5d action game where you must navigate around and defend yourself with your
-									trusty harpoon in order to escape the ship being invaded by a giant kracken.<br />Key features I
-									contributed to were:
-								</p>
-								<ul>
-									<li>Lead UI Developer</li>
-									<ul>
-										<li>Custom Dialogue System</li>
-										<li>Main Menu, Options Menu & Credits Menu</li>
-									</ul>
-									<li>Tentacle Enemy AI</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--Fear The Abyss-->
-
-					<!--Guardian Roadblock-->
-					<article class="container col-lg-6 col-md-12 mb-2">
-						<div class="card bg-body-tertiary">
-							<div class="portfolio-card-video">
-								<iframe
-									src="https://drive.google.com/file/d/1PyIMhQyOY57u-d5Qp-d8YJV0KVwTb53Z/preview"
-									width="100%"
-									height="480"
-									allow="autoplay"></iframe>
-							</div>
-							<div class="video-additional-info bg-dark">
-								<div class="team-size video-data"><i class="fa-solid fa-users"></i> 1</div>
-								<div class="time-spent video-data"><i class="fa-solid fa-clock"></i> 4 weeks</div>
-								<div class="program video-data"><i class="fa-solid fa-screwdriver-wrench"></i> Unreal (Paper2D)</div>
-							</div>
-
-							<div class="px-4 py-4">
-								<a href="http://example.com" style="text-decoration: none">
-									<h2 class="porfolio-card-header card-title">
-										Guardian Roadblock
-										<small class="porfolio-card-subheader card-subtitle">Solo Developer</small>
-									</h2>
-								</a>
-
-								<p>
-									Guardian Roadblock is a short and sweet puzzle game where a strange stone guardian blocks your way
-									into town. To win the game you must tell it the correct code.
-								</p>
-								<ul>
-									<li>Custom Branching Dialogue System with options</li>
-									<li>Dynamically layered sprites</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<!--Guardian Roadblock-->
+					</div>
 				</div>
 			</div>
 
@@ -334,24 +92,80 @@
 			<div class="bg-info-subtle p-5 d-flex align-items-center" id="about">
 				<div class="container-lg align-middle" style="max-width: 50%">
 					<div>
-						<img
-							src="src\assets\Images\smallIdle.png"
-							class="rounded-circle float-start img-thumbnail mx-3"
-							alt="..."
-							style="width: 50%; max-width: 300px" />
+						<img src="src\assets\Images\smallIdle.png" class="rounded-circle float-start img-thumbnail mx-3"
+							alt="..." style="width: 50%; max-width: 300px" />
 					</div>
 					<p class="fs-4">
-						<strong>Hi, I'm Marissa,</strong> a Game Developer from Manitoba, Canada. I am an alumni of the Game
+						<strong>Hi, I'm Marissa,</strong> a Game Developer from Manitoba, Canada. I am an alumni of the
+						Game
 						Development Program at Red River College, which I graduated from in April 2024.<br />
-						I find my skills in systems programming and UI development Ever since I was young I've had a passion for
-						video games, and through my time in secondary school I discovered a love for programming that I've
+						I find my skills in systems programming and UI development Ever since I was young I've had a
+						passion for
+						video games, and through my time in secondary school I discovered a love for programming that
+						I've
 						pursued.<br />
 					</p>
 				</div>
 			</div>
 			<div class="bg-dark pt-5"></div>
 		</div>
-		<link rel="stylesheet" href="./assets/js/main.js" />
-		<script src="src/assets/js/projectmanager.js"></script>
-	</body>
+	</div>
+	<link rel="stylesheet" href="./assets/js/main.js" />
+
+	<script src="src/assets/js/portfolio-project.js"></script>
+	<script>
+		var dataContainer = document.querySelector(".portfolio-gallery");
+		for (project of projects) {
+			var projectNotes = "";
+
+			for (notes of project.prj_notes) {
+				projectNotes += `<li class="proj-note-row">${notes}</li>`;
+			}
+
+			var projectTitle="";
+
+			if (project.has_webpage){
+				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
+				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`
+			}
+			else {
+				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`
+			}
+			var projectHtml = `
+				<div class="col">
+	<div class="portfolio-project bg-body-tertiary card overflow-hidden h-100">
+		<div class="">
+			<iframe
+				src="${project.video_link}"
+				allow="autoplay"
+				class="rounded youtube-video"></iframe>
+		</div>
+		<div class="mx-4">
+			<div class="port-proj-tags my-2 mx-auto text-center">
+				<span class="prog-tag btn bg-secondary"><i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> ${project.tags.platform}</span> 
+				<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-users"></i> ${project.tags.team_size}</span> 
+				<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-clock"></i> ${project.tags.dev_time}</span> 
+				<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-calendar-days"></i> ${project.tags.dev_year}</span> 
+			</div>
+			<div class="d-flex align-items-center">
+				${projectTitle}
+			</div>
+			<div class="game-link">
+				<a class="btn btn-danger w-100" href="${project.project_link}" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>
+			</div>
+			<div class="mt-2"> 
+				<p class="mb-1">${project.prj_short_desc}</p>
+				<ul class="proj-notes">
+					${projectNotes}
+				</ul>
+			</div>
+				
+		</div>
+	</div>
+</div>`;
+			dataContainer.insertAdjacentHTML("beforeend", projectHtml);
+		}
+	</script>
+</body>
+
 </html>
