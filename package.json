@@ -4,8 +4,9 @@
   "description": "",
   "source": "./src/index.html",
   "scripts": {
-    "dev": "parcel",
-    "build": "parcel build"
+    "start": "parcel serve src/index.html --public-url / --dist-dir dist",
+    "build": "parcel build src/index.html --public-url / --dist-dir dist",
+    "test": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "@popperjs/core": "^2.11.8"
   }
 }
