@@ -232,7 +232,3 @@ var projects = [
 		prj_short_desc: "The project I used to make my way into the RRC Polytechnic Game Development Course.",
 	},
 ];
-
-function myfunction() {
-	console.log("I have been called");
-}
