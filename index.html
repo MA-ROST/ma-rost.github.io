@@ -12,9 +12,10 @@
 	<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 	<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/70ccbae6dc.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="src/assets/js/portfolio-project.js"></script>
 </head>
 
-<body>
+<body onload="myfunction()">
 	<!-- NAV -->
 	<nav id="header" class="sticky navbar navbar-toggleable-sm navbar-inverse header">
 		<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
@@ -36,7 +37,7 @@
 	<!-- END NAV -->
 	<div id="container" class="page-container">
 		<div data-bs-spy="scroll" class="main-area-bg">
-			<div class="main">
+			<div class="main mx-5">
 				<div class="container">
 					<div id="landing">
 						<p>
@@ -63,6 +64,7 @@
 					<!-- Portfolio -->
 					<div id="portfolio">
 						<h1 style="border-bottom: 2px solid #495057;">Portfolio</h1>
+						
 						<nav>
 							<div class="nav nav-tabs" id="nav-tab" role="tablist">
 								<button class="nav-link active" id="nav-prog-port-tab" data-bs-toggle="tab"
@@ -72,6 +74,7 @@
 									data-bs-target="#nav-lvl-des" type="button" role="tab" aria-controls="nav-lvl-des"
 									aria-selected="false" disabled>Level
 									Design</button>
+								<span class="nav-link" style="margin-left: auto;" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="Click on the arrows for notes on each project!"><i class="fa-solid fa-circle-question"></i></span>
 							</div>
 						</nav>
 						<div class="tab-content p-2" id="nav-tabContent">
@@ -112,12 +115,11 @@
 	</div>
 	<link rel="stylesheet" href="./assets/js/main.js" />
 
-	<script src="src/assets/js/portfolio-project.js"></script>
+
 	<script>
 		var dataContainer = document.querySelector(".portfolio-gallery");
 		for (project of projects) {
 			var projectNotes = "";
-
 			for (notes of project.prj_notes) {
 				if (notes[0] == ">") {
 					projectNotes += `<ul><li class="proj-note-row">${notes.slice(2, notes.length)}</li></ul>`;
@@ -127,18 +129,15 @@
 				}
 			}
 
-			
 			var projectLink = "";
-			
 			if (project.project_link == "null") {
-				projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
+				projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
 			}
 			else {
-				projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
+				projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
 			}
 
 			var projectTitle = "";
-
 			if (project.has_webpage) {
 				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
 				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`
@@ -146,9 +145,10 @@
 			else {
 				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`
 			}
+
 			var projectHtml = `
 				<div class="col">
-					<div class="portfolio-project bg-body-tertiary card overflow-hidden h-100">
+					<div class="portfolio-project bg-body-tertiary card overflow-hidden">
 						<div class="">
 							<iframe
 								src="${project.video_link}"
@@ -168,11 +168,22 @@
 							<div class="game-link">
 								${projectLink}
 							</div>
-							<div class="mt-2"> 
-								<p class="mb-1">${project.prj_short_desc}</p>
-								<ul class="proj-notes">
-									${projectNotes}
-								</ul>
+							<div class="my-2"> 
+								<div class="row">
+									<p class="col mb-1">${project.prj_short_desc}
+									</p>
+									<a class="col-auto float-end mt-auto" data-bs-toggle="collapse"
+										href="#collapseNotes${project.id}" role="button" aria-expanded="false"
+										aria-controls="collapseNotes${project.id}" id="collapser" onclick="myFunction(this)" >
+										<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>
+									</a>
+								</div>
+								<div class="collapse" id="collapseNotes${project.id}">
+									<hr class="my-2">
+									<ul class="proj-notes">
+										${projectNotes}
+									</ul>
+								</div>
 							</div>
 								
 						</div>
@@ -180,6 +191,22 @@
 				</div>`;
 			dataContainer.insertAdjacentHTML("beforeend", projectHtml);
 		}
+	</script>
+
+	<script>
+		function myFunction(element) {
+			if (element.ariaExpanded == "true") {
+				element.innerHTML = `<i class="fa-solid fa-caret-up"></i>`; /* up */
+			}
+			else {
+				element.innerHTML = `<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>`; /* down */
+			}
+		}
+	</script>
+
+	<script>
+		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 	</script>
 </body>
 
