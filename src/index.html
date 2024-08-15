@@ -1,151 +1,217 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Marissa Rowles-Stewart</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Marissa Rowles-Stewart</title>
 
-	<script src="https://kit.fontawesome.com/70ccbae6dc.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="main.css">
+		<script
+			src="https://kit.fontawesome.com/70ccbae6dc.js"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="main.css" />
+	</head>
 
-</head>
+	<body>
+		<!-- NAV -->
+		<nav
+			id="header"
+			class="sticky navbar navbar-toggleable-sm navbar-inverse header">
+			<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
+			<div
+				id="headerContent"
+				class="navbar-collapse"
+				style="display: none"></div>
+			<ul class="navbar-nav navbar-right">
+				<li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						role="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<i class="fa-solid fa-bars fa-lg"></i>
+					</a>
+					<ul
+						class="dropdown-menu dropdown-menu-end"
+						style="position: absolute">
+						<li><a class="dropdown-item" href="#landing">Landing</a></li>
+						<li><a class="dropdown-item" href="#portfolio">Portfolio</a></li>
+						<li><a class="dropdown-item" href="#about">About Me</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<!-- END NAV -->
+		<div id="container" class="page-container">
+			<div data-bs-spy="scroll" class="main-area-bg">
+				<div class="main mx-5">
+					<div class="container">
+						<div id="landing">
+							<p>
+								Hi, I'm Marissa, a game developer from Manitoba, Canada.
+								<br />I'm a dedicated and passionate
+								<strong>user-interface</strong> and
+								<strong>gameplay</strong> programmer who recently graduated from
+								college with a Advanced Diploma with Honours in Game Development
+								- Programming. I love learning new things so that I can aid in
+								creating fun and inspiring experiences that is accessibile to
+								everyone.
+							</p>
+							<h3 style="border-bottom: 2px solid #495057">Skills</h3>
+							<ul>
+								<li><u>Languages</u><br />C++, C#, Java</li>
+								<li><u>Version Control Software</u><br />Perforce, Git</li>
+								<li>
+									<u>Project Management Tools</u><br />Trello, Pivotal Tracker,
+									Notion
+								</li>
+								<li>
+									<u>Design Tools</u><br />Figma, Adobe Photoshop, Adobe
+									Illustrator, Adobe InDesign, Adobe Premiere Pro
+								</li>
+								<li>
+									<u>Software</u><br />Visual Studio, Visual Studio Code, Apache
+									Netbeans
+								</li>
+								<li><u>Engines</u><br />Unreal Engine 5, Unity</li>
+							</ul>
+						</div>
+						<!-- Portfolio -->
+						<div id="portfolio">
+							<h1 style="border-bottom: 2px solid #495057">Portfolio</h1>
 
-<body>
-	<!-- NAV -->
-	<nav id="header" class="sticky navbar navbar-toggleable-sm navbar-inverse header">
-		<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
-		<div id="headerContent" class="navbar-collapse" style="display: none"></div>
-		<ul class="navbar-nav navbar-right">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false">
-					<i class="fa-solid fa-bars fa-lg"></i>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-end" style="position: absolute">
-					<li><a class="dropdown-item" href="#landing">Landing</a></li>
-					<li><a class="dropdown-item" href="#portfolio">Portfolio</a></li>
-					<li><a class="dropdown-item" href="#about">About Me</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-	<!-- END NAV -->
-	<div id="container" class="page-container">
-		<div data-bs-spy="scroll" class="main-area-bg">
-			<div class="main mx-5">
-				<div class="container">
-					<div id="landing">
-						<p>
-							Hi, I'm Marissa, a game developer from Manitoba, Canada. <br />I'm a dedicated and
-							passionate
-							<strong>user-interface</strong> and <strong>gameplay</strong> programmer who recently
-							graduated
-							from college with a Advanced Diploma with Honours in Game Development - Programming.
-							I love learning new things so that I can aid in creating fun and inspiring experiences that
-							is
-							accessibile to everyone.
-						</p>
-						<h3 style="border-bottom: 2px solid #495057;">Skills</h3>
-						<ul>
-							<li><u>Languages</u><br>C++, C#, Java</li>
-							<li><u>Version Control Software</u><br>Perforce, Git</li>
-							<li><u>Project Management Tools</u><br>Trello, Pivotal Tracker, Notion</li>
-							<li><u>Design Tools</u><br>Figma, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe
-								Premiere Pro</li>
-							<li><u>Software</u><br>Visual Studio, Visual Studio Code, Apache Netbeans</li>
-							<li><u>Engines</u><br>Unreal Engine 5, Unity</li>
-						</ul>
-					</div>
-					<!-- Portfolio -->
-					<div id="portfolio">
-						<h1 style="border-bottom: 2px solid #495057;">Portfolio</h1>
-
-						<nav>
-							<div class="nav nav-tabs" id="nav-tab" role="tablist">
-								<button class="nav-link active" id="nav-prog-port-tab" data-bs-toggle="tab"
-									data-bs-target="#nav-prog-port" type="button" role="tab"
-									aria-controls="nav-prog-port" aria-selected="true">Programming</button>
-								<button class="nav-link" id="nav-lvl-des-tab" data-bs-toggle="tab"
-									data-bs-target="#nav-lvl-des" type="button" role="tab" aria-controls="nav-lvl-des"
-									aria-selected="false" disabled>Level
-									Design</button>
-								<span class="nav-link" style="margin-left: auto;" data-bs-toggle="tooltip"
-									data-bs-html="true"
-									data-bs-title="Click on the arrows for notes on each project!"><i
-										class="fa-solid fa-circle-question"></i></span>
-							</div>
-						</nav>
-						<div class="tab-content p-2" id="nav-tabContent">
-							<div class="tab-pane fade show active" id="nav-prog-port" role="tabpanel"
-								aria-labelledby="nav-prog-port-tab" tabindex="0">
-
-								<div class="portfolio-gallery row row-cols-1 row-cols-lg-2 g-2">
+							<nav>
+								<div class="nav nav-tabs" id="nav-tab" role="tablist">
+									<button
+										class="nav-link active"
+										id="nav-prog-port-tab"
+										data-bs-toggle="tab"
+										data-bs-target="#nav-prog-port"
+										type="button"
+										role="tab"
+										aria-controls="nav-prog-port"
+										aria-selected="true">
+										Programming
+									</button>
+									<button
+										class="nav-link"
+										id="nav-lvl-des-tab"
+										data-bs-toggle="tab"
+										data-bs-target="#nav-lvl-des"
+										type="button"
+										role="tab"
+										aria-controls="nav-lvl-des"
+										aria-selected="false"
+										disabled>
+										Level Design
+									</button>
+									<span
+										class="nav-link"
+										style="margin-left: auto"
+										data-bs-toggle="tooltip"
+										data-bs-html="true"
+										data-bs-title="Click on the arrows for notes on each project!"
+										><i class="fa-solid fa-circle-question"></i
+									></span>
+								</div>
+							</nav>
+							<div class="tab-content p-2" id="nav-tabContent">
+								<div
+									class="tab-pane fade show active"
+									id="nav-prog-port"
+									role="tabpanel"
+									aria-labelledby="nav-prog-port-tab"
+									tabindex="0">
+									<div
+										class="portfolio-gallery row row-cols-1 row-cols-lg-2 g-2"></div>
+								</div>
+								<div
+									class="tab-pane fade"
+									id="nav-lvl-des"
+									role="tabpanel"
+									aria-labelledby="nav-lvl-des-tab"
+									tabindex="0">
+									TBA...
 								</div>
 							</div>
-							<div class="tab-pane fade" id="nav-lvl-des" role="tabpanel"
-								aria-labelledby="nav-lvl-des-tab" tabindex="0">TBA...</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<!--About me -->
-			<div class="bg-info-subtle p-5 d-flex align-items-center" id="about">
-				<div class="container-lg align-middle" style="max-width: 50%">
-					<div>
-						<img src="assets\Images\smallIdle.png" class="rounded-circle float-start img-thumbnail mx-3"
-							alt="..." style="width: 50%; max-width: 300px" />
+				<!--About me -->
+				<div class="bg-info-subtle p-5 d-flex align-items-center" id="about">
+					<div class="container-lg align-middle" style="max-width: 50%">
+						<div>
+							<img
+								src="assets\Images\smallIdle.png"
+								class="rounded-circle float-start img-thumbnail mx-3"
+								alt="..."
+								style="width: 50%; max-width: 300px" />
+						</div>
+						<p class="fs-4">
+							<strong>Hi, I'm Marissa,</strong> a Game Developer from Manitoba,
+							Canada. I am an alumni of the Game Development Program at Red
+							River College, which I graduated from in April 2024.<br />
+							I find my skills in systems programming and UI development Ever
+							since I was young I've had a passion for video games, and through
+							my time in secondary school I discovered a love for programming
+							that I've pursued.<br />
+						</p>
 					</div>
-					<p class="fs-4">
-						<strong>Hi, I'm Marissa,</strong> a Game Developer from Manitoba, Canada. I am an alumni of the
-						Game
-						Development Program at Red River College, which I graduated from in April 2024.<br />
-						I find my skills in systems programming and UI development Ever since I was young I've had a
-						passion for
-						video games, and through my time in secondary school I discovered a love for programming that
-						I've
-						pursued.<br />
-					</p>
 				</div>
+				<div class="bg-dark pt-5"></div>
 			</div>
-			<div class="bg-dark pt-5"></div>
 		</div>
-	</div>
 
-	<script src="./js/portfolio-project.js"></script>
-	<script>
-		var dataContainer = document.querySelector(".portfolio-gallery");
-		for (project of projects) {
-			var projectNotes = "";
-			for (notes of project.prj_notes) {
-				if (notes[0] == ">") {
-					projectNotes += `<ul><li class="proj-note-row">${notes.slice(2, notes.length)}</li></ul>`;
+		<script src="./js/portfolio-project.js"></script>
+		<script>
+			var dataContainer = document.querySelector(".portfolio-gallery");
+			for (project of projects) {
+				var projectNotes = "";
+				for (notes of project.prj_notes) {
+					if (notes[0] == ">") {
+						projectNotes += `<ul><li class="proj-note-row">${notes.slice(
+							2,
+							notes.length,
+						)}</li></ul>`;
+					} else {
+						projectNotes += `<li class="proj-note-row">${notes}</li>`;
+					}
 				}
-				else {
-					projectNotes += `<li class="proj-note-row">${notes}</li>`;
+
+				var projectLink = "";
+				if (project.project_link == "null") {
+					projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
+				} else {
+					projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
 				}
-			}
 
-			var projectLink = "";
-			if (project.project_link == "null") {
-				projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
-			}
-			else {
-				projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`
-			}
+				var projectTitle = "";
+				if (project.has_webpage) {
+					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
+				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`;
+				} else {
+					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`;
+				}
 
-			var projectTitle = "";
-			if (project.has_webpage) {
-				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
-				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`
-			}
-			else {
-				projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`
-			}
+				var projectStatus = "";
+				if (project.tags.status == "complete") {
+					projectStatus = `circle-check`;
+				} else if (project.tags.status == "unfinished") {
+					projectStatus = `circle-stop`;
+				} else if (project.tags.status == "prototype") {
+					projectStatus = `circle-info`;
+				} else if (project.tags.status == "in progress") {
+					projectStatus = `clock`;
+				} else if (project.tags.status == "on hold") {
+					projectStatus = `circle-pause`;
+				}
 
-			var projectHtml = `
+				var projectHtml = `
 				<div class="col">
 					<div class="portfolio-project bg-body-tertiary card overflow-hidden">
 						<div class="">
@@ -160,6 +226,7 @@
 								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-users"></i> ${project.tags.team_size}</span> 
 								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-clock"></i> ${project.tags.dev_time}</span> 
 								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-calendar-days"></i> ${project.tags.dev_year}</span> 
+								<span class="prog-tag btn bg-secondary text-capitalize"><i class="fa-solid fa-${projectStatus}"></i> ${project.tags.status}</span> 
 							</div>
 							<div class="d-flex align-items-center">
 								${projectTitle}
@@ -188,41 +255,45 @@
 						</div>
 					</div>
 				</div>`;
-			dataContainer.insertAdjacentHTML("beforeend", projectHtml);
-		}
-	</script>
-
-	<script>
-		function myFunction(element) {
-			if (element.ariaExpanded == "true") {
-				element.innerHTML = `<i class="fa-solid fa-caret-up"></i>`; /* up */
+				dataContainer.insertAdjacentHTML("beforeend", projectHtml);
 			}
-			else {
-				element.innerHTML = `<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>`; /* down */
+		</script>
+
+		<script>
+			function myFunction(element) {
+				if (element.ariaExpanded == "true") {
+					element.innerHTML = `<i class="fa-solid fa-caret-up"></i>`; /* up */
+				} else {
+					element.innerHTML = `<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>`; /* down */
+				}
 			}
-		}
-	</script>
-	<script async src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"></script>
-	<script type="importmap">
-    {
-      "imports": {
-        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.js",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.esm.min.js"
-      }
-    }
-    </script>
-	<script type="module">
-		import * as bootstrap from 'bootstrap'
-		document.querySelectorAll('[data-bs-toggle="popover"]')
-			.forEach(popover => {
-				new bootstrap.Popover(popover)
-			})
+		</script>
+		<script
+			async
+			src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"></script>
+		<script type="importmap">
+			{
+				"imports": {
+					"@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.js",
+					"bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.esm.min.js"
+				}
+			}
+		</script>
+		<script type="module">
+			import * as bootstrap from "bootstrap";
+			document
+				.querySelectorAll('[data-bs-toggle="popover"]')
+				.forEach((popover) => {
+					new bootstrap.Popover(popover);
+				});
 
-		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-	</script>
-	<script type="module" src="js/main.js"></script>
-
-</body>
-
+			const tooltipTriggerList = document.querySelectorAll(
+				'[data-bs-toggle="tooltip"]',
+			);
+			const tooltipList = [...tooltipTriggerList].map(
+				(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
+			);
+		</script>
+		<script type="module" src="js/main.js"></script>
+	</body>
 </html>
