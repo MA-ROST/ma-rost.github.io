@@ -122,7 +122,6 @@ body {
 }
 
 .main-area-bg{
-  margin: 0px 5%;
   padding: 2em 0;
   background-color: var(--bs-body-bg);
 }
@@ -130,4 +129,17 @@ body {
 .page-container {
   background-image: url(https://drive.google.com/thumbnail?id=18OzZYFVZu8CnBCEbDdBR2BCuuX8VnhYF&sz=w1920);
   background-attachment: fixed;
+}
+
+.project-divider {
+  border-bottom: 2px solid #495057
+}
+
+.nav-title {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-navbar-brand-font-size);
+}
+
+.flex-push-end {
+  flex-grow: 0;
 }

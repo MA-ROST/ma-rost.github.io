@@ -19,76 +19,110 @@
 		<!-- NAV -->
 		<nav
 			id="header"
-			class="sticky navbar navbar-toggleable-sm navbar-inverse header">
-			<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
-			<div
-				id="headerContent"
-				class="navbar-collapse"
-				style="display: none"></div>
-			<ul class="navbar-nav navbar-right">
-				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						<i class="fa-solid fa-bars fa-lg"></i>
-					</a>
-					<ul
-						class="dropdown-menu dropdown-menu-end"
-						style="position: absolute">
-						<li>
-							<a class="dropdown-item" href="#landing">Landing</a>
+			class="fixed-top navbar navbar-expand-lg navbar-inverse header">
+			<div class="container-fluid">
+				<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse flex-push-end"
+					id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="#portfolio">Portfolio</a>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="#about">About Me</a>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Dropdown link
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</nav>
 		<!-- END NAV -->
-		<div id="container" class="page-container">
-			<div data-bs-spy="scroll" class="main-area-bg">
-				<div class="main mx-5">
+		<div id="container" class="page-container py-md-0 py-5">
+			<div
+				data-bs-spy="scroll"
+				class="main-area-bg bg-dark-subtle mx-md-5 px-3">
+				<div class="main">
 					<div class="container">
 						<div id="landing">
-							<p>
-								Hi, I'm Marissa, a game developer from Manitoba, Canada.
-								<br />I'm a dedicated and passionate
-								<strong>user-interface</strong> and
-								<strong>gameplay</strong> programmer who recently graduated from
-								college with a Advanced Diploma with Honours in Game Development
-								- Programming. I love learning new things so that I can aid in
-								creating fun and inspiring experiences that is accessibile to
-								everyone.
-							</p>
-							<h3 style="border-bottom: 2px solid #495057">Skills</h3>
-							<ul>
-								<li><u>Languages</u><br />C++, C#, Java</li>
-								<li><u>Version Control Software</u><br />Perforce, Git</li>
-								<li>
-									<u>Project Management Tools</u><br />Trello, Pivotal Tracker,
-									Notion
-								</li>
-								<li>
-									<u>Design Tools</u><br />Figma, Adobe Photoshop, Adobe
-									Illustrator, Adobe InDesign, Adobe Premiere Pro
-								</li>
-								<li>
-									<u>Software</u><br />Visual Studio, Visual Studio Code, Apache
-									Netbeans
-								</li>
-								<li><u>Engines</u><br />Unreal Engine 5, Unity</li>
-							</ul>
+							<div id="intro">
+								<h2>UI & Game Developer</h2>
+								<p>
+									Hi, I'm Marissa, a game developer from Manitoba, Canada.
+									<br />I'm a dedicated and passionate
+									<strong>user-interface</strong> and
+									<strong>gameplay</strong> programmer who recently graduated
+									from college with a Advanced Diploma with Honours in Game
+									Development - Programming. I love learning new things so that
+									I can aid in creating fun and inspiring experiences that is
+									accessible to everyone.
+								</p>
+							</div>
+							<div class="row justify-content-around">
+								<div id="skills" class="col-md-6">
+									<h3>Skills</h3>
+									<ul class="border-start">
+										<li><u>User Interface</u><br />Layout & Development</li>
+										<li><u>Game Design</u><br />Mechanics, Scope</li>
+									</ul>
+								</div>
+								<div id="proficiencies" class="col-md-6">
+									<h3>Proficiencies</h3>
+									<ul class="border-start">
+										<li>
+											<u>Languages</u><br />C++, C#, Java, Unreal Blueprints
+										</li>
+										<li><u>Version Control Software</u><br />Perforce, Git</li>
+										<li>
+											<u>Project Management Tools</u><br />Trello, Pivotal
+											Tracker, Notion
+										</li>
+										<li>
+											<u>Design Tools</u><br />Figma, Adobe Photoshop, Adobe
+											Illustrator, Adobe InDesign, Adobe Premiere Pro
+										</li>
+										<li>
+											<u>Software</u><br />Visual Studio, Visual Studio Code,
+											Apache Netbeans
+										</li>
+										<li><u>Engines</u><br />Unreal Engine 5, Unity</li>
+									</ul>
+								</div>
+							</div>
 						</div>
+
 						<!-- Portfolio -->
-						<div id="portfolio">
-							<h1 style="border-bottom: 2px solid #495057">Portfolio</h1>
+						<div class="my-2 bg-" id="portfolio">
+							<h1 class="project-divider">Portfolio</h1>
 
 							<nav>
 								<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -125,7 +159,9 @@
 									></span>
 								</div>
 							</nav>
-							<div class="tab-content p-2" id="nav-tabContent">
+							<div
+								class="tab-content p-2 bg-body rounded-bottom border-start border-bottom border-end"
+								id="nav-tabContent">
 								<div
 									class="tab-pane fade show active"
 									id="nav-prog-port"
@@ -145,31 +181,32 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<!--About me -->
-				<div class="bg-info-subtle p-5 d-flex align-items-center" id="about">
-					<div class="container-lg align-middle" style="max-width: 50%">
-						<div>
-							<img
-								src="assets\Images\smallIdle.png"
-								class="rounded-circle float-start img-thumbnail mx-3"
-								alt="..."
-								style="width: 50%; max-width: 300px" />
+						<!--About me -->
+						<div class="py-5 px-md-5 bg-body border rounded" id="about">
+							<div
+								class="container-lg d-flex flex-column flex-md-row justify-content-center align-items-center">
+								<div class="mx-md-3 mx-auto my-3">
+									<img
+										src="assets\Images\smallIdle.png"
+										class="rounded-circle float-md-start img-thumbnail w-100"
+										alt="..."
+										style="max-width: 300px" />
+								</div>
+								<p>
+									<strong>Hi, I'm Marissa,</strong> a Game Developer from
+									Manitoba, Canada. I am an alumni of the Game Development
+									Program at Red River College, which I graduated from in April
+									2024.<br />
+									I find my skills in systems programming and UI development
+									Ever since I was young I've had a passion for video games, and
+									through my time in secondary school I discovered a love for
+									programming that I've pursued.<br />
+								</p>
+							</div>
 						</div>
-						<p class="fs-4">
-							<strong>Hi, I'm Marissa,</strong> a Game Developer from Manitoba,
-							Canada. I am an alumni of the Game Development Program at Red
-							River College, which I graduated from in April 2024.<br />
-							I find my skills in systems programming and UI development Ever
-							since I was young I've had a passion for video games, and through
-							my time in secondary school I discovered a love for programming
-							that I've pursued.<br />
-						</p>
 					</div>
 				</div>
-				<div class="bg-dark pt-5"></div>
 			</div>
 		</div>
 
