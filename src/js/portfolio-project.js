@@ -378,4 +378,5 @@ for (project of projects) {
 			</div>
 		</div>`;
 	dataContainer.insertAdjacentHTML("beforeend", projectHtml);
+	console.log("finished " + project.title);
 }
