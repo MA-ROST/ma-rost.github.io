@@ -333,6 +333,49 @@ function GetProjectTags(project) {
 	return projectTags;
 }
 
+var dataContainer = document.querySelector(".portfolio-gallery");
 for (project of projects) {
-	console.log(project.title + " " + GetProjectStatusIcon(project));
+	var projectCollapseID = "collapseNotes" + project.id;
+
+	var projectHtml = `
+		<div class="col">
+			<div class="portfolio-project bg-body-tertiary card overflow-hidden">
+				<div class="">
+					<iframe
+						src="${project.video_link}"
+						allow="autoplay"
+						class="rounded youtube-video"></iframe>
+				</div>
+				<div class="mx-4">
+					<div class="port-proj-tags my-2 mx-auto text-center" onload="myFunction()">
+						${GetProjectTags(project)}
+					</div>
+					<div class="d-flex align-items-center">
+						${GetProjectTitle(project)}
+					</div>
+					<div class="game-link">
+						${GetProjectLink(project)}
+					</div>
+					<div class="my-2"> 
+						<div class="row">
+							<p class="col mb-1">${project.prj_short_desc}
+							</p>
+							<a class="col-auto float-end mt-auto" data-bs-toggle="collapse"
+								href="#${projectCollapseID}" role="button" aria-expanded="false"
+								aria-controls="${projectCollapseID}" id="collapser" onclick="onClickCollapse(this)" >
+								<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>
+							</a>
+						</div>
+						<div class="collapse" id="${projectCollapseID}">
+							<hr class="my-2">
+							<ul class="proj-notes">
+								${GetProjectNotes(project)}
+							</ul>
+						</div>
+					</div>
+						
+				</div>
+			</div>
+		</div>`;
+	dataContainer.insertAdjacentHTML("beforeend", projectHtml);
 }

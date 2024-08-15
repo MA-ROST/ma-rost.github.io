@@ -174,10 +174,10 @@
 		</div>
 
 		<script src="./js/portfolio-project.js"></script>
-		<script>
+		<!-- <script>
 			var dataContainer = document.querySelector(".portfolio-gallery");
 			for (project of projects) {
-				/* var projectNotes = "";
+				var projectNotes = "";
 				for (notes of project.prj_notes) {
 					if (notes[0] == ">") {
 						projectNotes += `<ul><li class="proj-note-row">${notes.slice(
@@ -187,24 +187,24 @@
 					} else {
 						projectNotes += `<li class="proj-note-row">${notes}</li>`;
 					}
-				} */
+				}
 
-				/* var projectLink = "";
+				var projectLink = "";
 				if (project.project_link == "null") {
 					projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
 				} else {
 					projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
-				} */
+				}
 
-				/* var projectTitle = "";
+				var projectTitle = "";
 				if (project.has_webpage) {
 					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
 				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`;
 				} else {
 					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`;
-				} */
+				}
 
-				/* var projectStatus = "";
+				var projectStatus = "";
 				if (project.tags.status == "complete") {
 					projectStatus = `circle-check`;
 				} else if (project.tags.status == "unfinished") {
@@ -215,7 +215,7 @@
 					projectStatus = `clock`;
 				} else if (project.tags.status == "on hold") {
 					projectStatus = `circle-pause`;
-				} */
+				}
 
 				var projectCollapseID = "collapseNotes" + project.id;
 
@@ -261,7 +261,7 @@
 				</div>`;
 				dataContainer.insertAdjacentHTML("beforeend", projectHtml);
 			}
-		</script>
+		</script> -->
 
 		<script>
 			function onClickCollapse(element) {
