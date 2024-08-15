@@ -2,3 +2,5 @@
 /src/portfolio/videos
 
 .parcel-cache/
+/.parcel-cache
+/dist
