@@ -261,7 +261,8 @@ var projects = [
 	},
 ];
 
-function getProjectStatus(project) {
+function GetProjectStatusIcon(project) {
+	var projectStatus = "";
 	if (project.tags.status == "complete") {
 		projectStatus = `circle-check`;
 	} else if (project.tags.status == "unfinished") {
@@ -273,4 +274,65 @@ function getProjectStatus(project) {
 	} else if (project.tags.status == "on hold") {
 		projectStatus = `circle-pause`;
 	}
+
+	return projectStatus;
+}
+
+function GetProjectNotes(project) {
+	var projectNotes = "";
+	for (notes of project.prj_notes) {
+		if (notes[0] == ">") {
+			projectNotes += `<ul><li class="proj-note-row">${notes.slice(
+				2,
+				notes.length,
+			)}</li></ul>`;
+		} else {
+			projectNotes += `<li class="proj-note-row">${notes}</li>`;
+		}
+	}
+	return projectNotes;
+}
+
+function GetProjectTitle(project) {
+	var projectTitle = "";
+	if (project.has_webpage) {
+		projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
+				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`;
+	} else {
+		projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`;
+	}
+
+	return projectTitle;
+}
+
+function GetProjectLink(project) {
+	var projectLink = "";
+	if (project.project_link == "null") {
+		projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
+	} else {
+		projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
+	}
+
+	return projectLink;
+}
+
+function GetProjectTags(project) {
+	var projectTags = "";
+	projectTags = `<span class="prog-tag btn bg-secondary">
+						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> 
+						${project.tags.platform}</span> 
+					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-users"></i> 
+						${project.tags.team_size}</span> 
+					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-clock"></i> 
+						${project.tags.dev_time}</span> 
+					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-calendar-days"></i> 
+						${project.tags.dev_year}</span> 
+					<span class="prog-tag btn bg-secondary text-capitalize">
+						<i class="fa-solid fa-${GetProjectStatusIcon(project)}"></i> 
+						${project.tags.status}</span>`;
+	return projectTags;
+}
+
+for (project of projects) {
+	console.log(project.title + " " + GetProjectStatusIcon(project));
 }

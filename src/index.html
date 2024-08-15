@@ -38,9 +38,15 @@
 					<ul
 						class="dropdown-menu dropdown-menu-end"
 						style="position: absolute">
-						<li><a class="dropdown-item" href="#landing">Landing</a></li>
-						<li><a class="dropdown-item" href="#portfolio">Portfolio</a></li>
-						<li><a class="dropdown-item" href="#about">About Me</a></li>
+						<li>
+							<a class="dropdown-item" href="#landing">Landing</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#about">About Me</a>
+						</li>
 					</ul>
 				</li>
 			</ul>
@@ -171,7 +177,7 @@
 		<script>
 			var dataContainer = document.querySelector(".portfolio-gallery");
 			for (project of projects) {
-				var projectNotes = "";
+				/* var projectNotes = "";
 				for (notes of project.prj_notes) {
 					if (notes[0] == ">") {
 						projectNotes += `<ul><li class="proj-note-row">${notes.slice(
@@ -181,24 +187,24 @@
 					} else {
 						projectNotes += `<li class="proj-note-row">${notes}</li>`;
 					}
-				}
+				} */
 
-				var projectLink = "";
+				/* var projectLink = "";
 				if (project.project_link == "null") {
 					projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
 				} else {
 					projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
-				}
+				} */
 
-				var projectTitle = "";
+				/* var projectTitle = "";
 				if (project.has_webpage) {
 					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
 				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`;
 				} else {
 					projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`;
-				}
+				} */
 
-				var projectStatus = "";
+				/* var projectStatus = "";
 				if (project.tags.status == "complete") {
 					projectStatus = `circle-check`;
 				} else if (project.tags.status == "unfinished") {
@@ -209,7 +215,9 @@
 					projectStatus = `clock`;
 				} else if (project.tags.status == "on hold") {
 					projectStatus = `circle-pause`;
-				}
+				} */
+
+				var projectCollapseID = "collapseNotes" + project.id;
 
 				var projectHtml = `
 				<div class="col">
@@ -221,33 +229,29 @@
 								class="rounded youtube-video"></iframe>
 						</div>
 						<div class="mx-4">
-							<div class="port-proj-tags my-2 mx-auto text-center">
-								<span class="prog-tag btn bg-secondary"><i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> ${project.tags.platform}</span> 
-								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-users"></i> ${project.tags.team_size}</span> 
-								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-clock"></i> ${project.tags.dev_time}</span> 
-								<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-calendar-days"></i> ${project.tags.dev_year}</span> 
-								<span class="prog-tag btn bg-secondary text-capitalize"><i class="fa-solid fa-${projectStatus}"></i> ${project.tags.status}</span> 
+							<div class="port-proj-tags my-2 mx-auto text-center" onload="myFunction()">
+								${GetProjectTags(project)}
 							</div>
 							<div class="d-flex align-items-center">
-								${projectTitle}
+								${GetProjectTitle(project)}
 							</div>
 							<div class="game-link">
-								${projectLink}
+								${GetProjectLink(project)}
 							</div>
 							<div class="my-2"> 
 								<div class="row">
 									<p class="col mb-1">${project.prj_short_desc}
 									</p>
 									<a class="col-auto float-end mt-auto" data-bs-toggle="collapse"
-										href="#collapseNotes${project.id}" role="button" aria-expanded="false"
-										aria-controls="collapseNotes${project.id}" id="collapser" onclick="myFunction(this)" >
+										href="#${projectCollapseID}" role="button" aria-expanded="false"
+										aria-controls="${projectCollapseID}" id="collapser" onclick="onClickCollapse(this)" >
 										<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>
 									</a>
 								</div>
-								<div class="collapse" id="collapseNotes${project.id}">
+								<div class="collapse" id="${projectCollapseID}">
 									<hr class="my-2">
 									<ul class="proj-notes">
-										${projectNotes}
+										${GetProjectNotes(project)}
 									</ul>
 								</div>
 							</div>
@@ -260,7 +264,7 @@
 		</script>
 
 		<script>
-			function myFunction(element) {
+			function onClickCollapse(element) {
 				if (element.ariaExpanded == "true") {
 					element.innerHTML = `<i class="fa-solid fa-caret-up"></i>`; /* up */
 				} else {

@@ -1,9 +1,10 @@
 {
-  "singleQuote": false,
-  "semi": true,
-  "quoteProps": "consistent",
-  "trailingComma": "all",
-  "bracketSpacing": true,
-  "bracketSameLine": true,
-  "useTabs": true
+	"singleQuote": false,
+	"semi": true,
+	"quoteProps": "consistent",
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"useTabs": true,
+	"singleAttributePerLine": false
 }
