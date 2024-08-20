@@ -320,16 +320,16 @@ function GetProjectLink(project) {
 function GetProjectTags(project) {
 	var projectTags = "";
 	projectTags = `<span class="prog-tag btn bg-secondary mt-1">
-						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon} fa-xl"></i> 
+						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> 
 						${project.tags.platform}</span>
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-users fa-xl"></i> 
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-users"></i> 
 						${project.tags.team_size}</span> 
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-clock fa-xl"></i> 
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-clock"></i> 
 						${project.tags.dev_time}</span> 
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-calendar-days fa-xl"></i> 
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-calendar-days"></i> 
 						${project.tags.dev_year}</span> 
 					<span class="prog-tag btn bg-secondary mt-1 text-capitalize">
-						<i class="fa-solid fa-${GetProjectStatusIcon(project)} fa-xl"></i> 
+						<i class="fa-solid fa-${GetProjectStatusIcon(project)}"></i> 
 						${project.tags.status}</span>`;
 	return projectTags;
 }
