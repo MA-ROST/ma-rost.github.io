@@ -308,27 +308,28 @@ function GetProjectTitle(project) {
 function GetProjectLink(project) {
 	var projectLink = "";
 	if (project.project_link == "null") {
-		projectLink = `<a class="btn btn-danger w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
+		projectLink = `<a class="btn btn-secondary w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-solid fa-circle-exclamation"></i> Link</a>`;
 	} else {
-		projectLink = `<a class="btn btn-danger w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
+		let color = "primary";
+		project.project_link.includes("github") ? (color = "primary") : "danger";
+		projectLink = `<a class="btn btn-${color} w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
 	}
-
 	return projectLink;
 }
 
 function GetProjectTags(project) {
 	var projectTags = "";
-	projectTags = `<span class="prog-tag btn bg-secondary">
-						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> 
-						${project.tags.platform}</span> 
-					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-users"></i> 
+	projectTags = `<span class="prog-tag btn bg-secondary mt-1">
+						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon} fa-xl"></i> 
+						${project.tags.platform}</span>
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-users fa-xl"></i> 
 						${project.tags.team_size}</span> 
-					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-clock"></i> 
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-clock fa-xl"></i> 
 						${project.tags.dev_time}</span> 
-					<span class="prog-tag btn bg-secondary"><i class="fa-solid fa-calendar-days"></i> 
+					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-calendar-days fa-xl"></i> 
 						${project.tags.dev_year}</span> 
-					<span class="prog-tag btn bg-secondary text-capitalize">
-						<i class="fa-solid fa-${GetProjectStatusIcon(project)}"></i> 
+					<span class="prog-tag btn bg-secondary mt-1 text-capitalize">
+						<i class="fa-solid fa-${GetProjectStatusIcon(project)} fa-xl"></i> 
 						${project.tags.status}</span>`;
 	return projectTags;
 }
@@ -347,7 +348,7 @@ for (project of projects) {
 						class="rounded youtube-video"></iframe>
 				</div>
 				<div class="mx-4">
-					<div class="port-proj-tags my-2 mx-auto text-center" onload="myFunction()">
+					<div class="port-proj-tags my-2 mx-auto text-center gy-5" onload="myFunction()">
 						${GetProjectTags(project)}
 					</div>
 					<div class="d-flex align-items-center">
