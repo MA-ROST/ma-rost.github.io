@@ -300,7 +300,7 @@ function GetProjectTitle(project) {
 	if (project.has_webpage) {
 		projectTitle = `
 			<a class="d-inline-flex text-decoration-none align-items-center text-body" href="${project.project_link}" target="_blank" role="button" aria-disabled="true">
-				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2>
+				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2> 
 				<span class="d-inline-block px-2"><i class="fa-solid fa-arrow-up fa-lg fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i></span>
 			</a>`;
 	} else {
