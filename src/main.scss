@@ -3,10 +3,10 @@
 
 $primary: #3b71ca;
 $secondary: #636c72;
-$success: #14A44D;
-$danger: #DC4C64;
-$warning: #E4A11B;
-$info: #54B4D3;
+$success: #14a44d;
+$danger: #dc4c64;
+$warning: #e4a11b;
+$info: #54b4d3;
 $light: #f7f7f7;
 $dark: #111315;
 
@@ -17,6 +17,8 @@ $min-contrast-ratio: 2.5;
 .bg-primary {
 	@extend .text-light;
 }
+
+
 
 // Include any default variable overrides here (though functions won't be available)
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

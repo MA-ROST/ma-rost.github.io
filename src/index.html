@@ -13,8 +13,8 @@
 
 <body>
 	<!-- NAV -->
-	<nav id="header" class="fixed-top navbar navbar-expand-lg navbar-inverse header">
-		<div class="container-fluid">
+	<nav id="header" class="navbar navbar-expand-lg navbar-inverse header fixed-top ">
+		<div class="container-xxl ">
 			<a class="navbar-brand fw-semibold" href="/">Marissa Rowles-Stewart</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
 				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,15 +48,11 @@
 							<i class="fa-brands fa-github fa-lg"></i>
 						</a>
 					</li>
-					<li class="nav-item active dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">
-							<i class="fa-solid fa-bars fa-lg"></i>
+					<li class="mx-2 nav-item">
+						<a class="btn btn-primary" href="portfolio/Resume.pdf" role="button" target="_blank"
+							rel="noopener">
+							Resume <i class="fa-solid fa-caret-right"></i>
 						</a>
-						<ul class="dropdown-menu dropdown-menu-end text-end">
-							<li><a class="dropdown-item" href="#landing">Home</a></li>
-							<li><a class="dropdown-item" href="#portfolio">Portfolio</a></li>
-						</ul>
 					</li>
 				</ul>
 			</div>
@@ -119,7 +115,7 @@
 				<!-- Portfolio -->
 				<div id="portfolio" class="rounded container section">
 					<h3>Portfolio</h3>
-					<nav>
+					<nav class="d-none">
 						<div class="nav nav-buttons" id="nav-tab" role="tablist">
 							<button class="nav-link active" id="nav-prog-port-tab" data-bs-toggle="tab"
 								data-bs-target="#nav-prog-port" type="button" role="tab" aria-controls="nav-prog-port"
@@ -141,6 +137,7 @@
 									class="fa-solid fa-circle-question"></i></span>
 						</div>
 					</nav>
+
 
 					<div class="tab-content py-2" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="nav-prog-port" role="tabpanel"

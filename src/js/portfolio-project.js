@@ -2,7 +2,7 @@ var projects = [
 	{
 		id: "rcr",
 		title: "Rift City Rebels",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "UE5",
 			pf_icon: "screwdriver-wrench",
@@ -29,7 +29,7 @@ var projects = [
 	{
 		id: "gh",
 		title: "Goblin Hunt VR",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "UE5",
 			pf_icon: "screwdriver-wrench",
@@ -137,7 +137,7 @@ var projects = [
 	{
 		id: "fta",
 		title: "Fear the Abyss",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "UE5",
 			pf_icon: "screwdriver-wrench",
@@ -163,7 +163,7 @@ var projects = [
 	{
 		id: "guardian",
 		title: "Guardian Roadblock",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "UE5",
 			pf_icon: "screwdriver-wrench",
@@ -188,7 +188,7 @@ var projects = [
 	{
 		id: "gol",
 		title: "Game of Life",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "C++",
 			pf_icon: "file-code",
@@ -199,7 +199,8 @@ var projects = [
 			status: "complete",
 		},
 		video_link: "https://www.youtube.com/embed/X_P_8SaY34o",
-		project_link: "https://github.com/ma-rost/gameOfLife",
+		project_link:
+			"https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
 		prj_icon: "github",
 		prj_notes: [
 			"OpenFrameworks",
@@ -214,7 +215,7 @@ var projects = [
 	{
 		id: "IYS",
 		title: "Invade Your Space",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "C++",
 			pf_icon: "file-code",
@@ -225,7 +226,8 @@ var projects = [
 			status: "complete",
 		},
 		video_link: "https://www.youtube.com/embed/YCeItVf0FqQ",
-		project_link: "https://github.com/ma-rost/InvadeYourSpace",
+		project_link:
+			"https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
 		prj_icon: "github",
 		prj_notes: [
 			"OpenFrameworks",
@@ -237,7 +239,7 @@ var projects = [
 	{
 		id: "errand",
 		title: "Errand Run",
-		has_webpage: false,
+		has_webpage: true,
 		tags: {
 			platform: "Unity3D",
 			pf_icon: "unity",
@@ -296,42 +298,45 @@ function GetProjectNotes(project) {
 function GetProjectTitle(project) {
 	var projectTitle = "";
 	if (project.has_webpage) {
-		projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>
-				<i class="fa-solid fa-right-long fa-xl arrow-pulse"></i>`;
+		projectTitle = `
+			<a class="d-inline-flex text-decoration-none align-items-center text-body" href="${project.project_link}" target="_blank" role="button" aria-disabled="true">
+				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2>
+				<span class="d-inline-block px-2"><i class="fa-solid fa-arrow-up fa-lg fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i></span>
+			</a>`;
 	} else {
-		projectTitle = `<h2 class="fw-semibold port-prog-name d-inline flex-fill">${project.title}</h2>`;
+		projectTitle = `
+			<a class="d-inline-flex text-decoration-none align-items-center text-body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="This Project has no playable version">
+				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2>
+				<span class="d-inline-block px-2"><i class="fa-solid fa-arrow-up fa-lg fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i></span>
+			</a>`;
 	}
 
 	return projectTitle;
 }
 
-function GetProjectLink(project) {
-	var projectLink = "";
-	if (project.project_link == "null") {
-		projectLink = `<a class="btn btn-secondary w-100 disabled" href="${project.project_link}" target="_blank" role="button" aria-disabled="true"><i class="fa-solid fa-circle-exclamation"></i> Link</a>`;
-	} else {
-		let color = "primary";
-		project.project_link.includes("github") ? (color = "primary") : "danger";
-		projectLink = `<a class="btn btn-${color} w-100" href="${project.project_link}" target="_blank" role="button"><i class="fa-brands fa-${project.prj_icon}"></i> Link</a>`;
-	}
-	return projectLink;
-}
-
 function GetProjectTags(project) {
 	var projectTags = "";
-	projectTags = `<span class="prog-tag btn bg-secondary mt-1">
-						<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon}"></i> 
-						${project.tags.platform}</span>
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-users"></i> 
-						${project.tags.team_size}</span> 
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-clock"></i> 
-						${project.tags.dev_time}</span> 
-					<span class="prog-tag btn bg-secondary mt-1"><i class="fa-solid fa-calendar-days"></i> 
-						${project.tags.dev_year}</span> 
-					<span class="prog-tag btn bg-secondary mt-1 text-capitalize">
-						<i class="fa-solid fa-${GetProjectStatusIcon(project)}"></i> 
-						${project.tags.status}</span>`;
+
+	const tagContent = [
+		`<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon} me-2"></i> ${project.tags.platform}`,
+		`<i class="fa-solid fa-users me-2"></i> ${project.tags.team_size}`,
+		`<i class="fa-solid fa-clock me-2"></i> ${project.tags.dev_time}`,
+		`<i class="fa-solid fa-calendar-days me-2"></i> ${project.tags.dev_year}`,
+	];
+
+	var text = "";
+	for (tag of tagContent) {
+		text = `<li class="me-2 mt-2">
+					<div class="d-flex align-items-center rounded-pill bg-primary px-3 py-1">${tag}</div>
+				</li>`;
+		projectTags += text;
+	}
+
 	return projectTags;
+}
+
+function HasGameLink(project) {
+	return project.project_link == "null";
 }
 
 var dataContainer = document.querySelector(".portfolio-gallery");
@@ -348,33 +353,31 @@ for (project of projects) {
 						class="rounded youtube-video"></iframe>
 				</div>
 				<div class="mx-4">
-					<div class="port-proj-tags my-2 mx-auto text-center gy-5" onload="myFunction()">
-						${GetProjectTags(project)}
-					</div>
-					<div class="d-flex align-items-center">
+					<div class="d-flex align-items-center mt-2">
 						${GetProjectTitle(project)}
 					</div>
-					<div class="game-link">
-						${GetProjectLink(project)}
-					</div>
-					<div class="my-2"> 
+					<div class="mb-2"> 
+						<div class="port-proj-tags mb-2 mx-auto gy-5">
+							<ul class="d-flex flex-row pl-0" style="list-style: none; padding-left: 0px;">
+								${GetProjectTags(project)}
+							</ul>
+						</div>
 						<div class="row">
 							<p class="col mb-1">${project.prj_short_desc}
 							</p>
 							<a class="col-auto float-end mt-auto" data-bs-toggle="collapse"
 								href="#${projectCollapseID}" role="button" aria-expanded="false"
 								aria-controls="${projectCollapseID}" id="collapser" onclick="onClickCollapse(this)" >
-								<i class="fa-solid fa-caret-down" data-toggle="tooltip" title="Open Project notes"></i>
+								<i class="fa-solid fa-caret-up" data-toggle="tooltip" title="Open Project notes"></i>
 							</a>
 						</div>
-						<div class="collapse" id="${projectCollapseID}">
+						<div class="collapse show" id="${projectCollapseID}">
 							<hr class="my-2">
 							<ul class="proj-notes">
 								${GetProjectNotes(project)}
 							</ul>
 						</div>
 					</div>
-						
 				</div>
 			</div>
 		</div>`;

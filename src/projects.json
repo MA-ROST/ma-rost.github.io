@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {"id": "rcr", "title": "Rift City Rebels", 
+            "video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i", "prj_link": "https://dobibo.itch.io/rift-city-rebels", 
+            "short_desc": "Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program.", 
+            "prj_notes": [
+                "Lead UI Developer",
+                "> Created the Controller-To-UI system, allowing for both Keyboard and Game Controllers interact with menu's",
+                "> Developed Character Select UI, which allows multiple users to interact at once",
+                "Developer of Matcha/The Snowboarder character",
+                "> Assisted with creating movement based actions, such as snowboarding across platforms",
+                "Helped with designing the layout for the Game Manual"
+	    	],
+            "tags": {
+                "platform": "UE5",
+                "pf_icon": "screwdriver-wrench",
+                "pf_type": "solid",
+                "team_size": 16,
+                "dev_time": "4 Months",
+                "dev_year": 2024
+            }
+        },
+        {"id":"gh", 
+
+        }
+    ]
+
+}
