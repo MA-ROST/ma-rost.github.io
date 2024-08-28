@@ -16,7 +16,7 @@ var projects = [
 		project_link: "https://dobibo.itch.io/rift-city-rebels",
 		prj_icon: "itch-io",
 		prj_notes: [
-			"Lead UI Developer",
+			"Unreal Engine 5 UI Developer",
 			"> Created the Controller-To-UI system, allowing for both Keyboard and Game Controllers interact with menu's",
 			"> Developed Character Select UI, which allows multiple users to interact at once",
 			"Developer of Matcha/The Snowboarder character",
