@@ -1,4 +1,3 @@
-const json = `../assets/Projects.json`;
 
 getData();
 
@@ -26,7 +25,7 @@ async function getData() {
 
 function GetProjectTitle(project) {
 	var projectTitle = `<h2 class="pr-title border-bottom border-secondary">${project.name}</h2>`;
-
+	console.log("\tTitle");
 	return projectTitle;
 }
 
@@ -47,7 +46,7 @@ function GetProjectTags(project) {
             	</li>`;
 		projectTags += text;
 	}
-
+	console.log("\tTags");
 	return projectTags;
 }
 
@@ -61,6 +60,7 @@ function GetProjectNotes(project) {
 			projectNotes += `<li class="proj-note-row">${notes}</li>`;
 		}
 	}
+	console.log("\tNotes");
 	return projectNotes;
 }
 
@@ -70,19 +70,31 @@ function GetProjectCarousel(project) {
 	// if first, make active
 
 	var counter = 0;
-	for (imgs of project.images) {
-		projectCarousel += `<div class="carousel-item${counter == 0 ? ' active' : ''}">
-        <img src="${imgs.link}" class="d-block" alt="${imgs.alt}" />
-    	</div>`;
 
-		counter++;
+	if (project.images.length != 0) {
+		for (imgs of project.images) {
+			projectCarousel += `<div class="carousel-item${counter == 0 ? ' active' : ''}">
+			<img src="${imgs.link}" class="d-block" alt="${imgs.alt}" />
+			</div>`;
+
+			counter++;
+		}
 	}
+	else {
+		projectCarousel += `<div class="carousel-item active">
+								<div class="d-block placeholder"></div>
+							</div>`;
+	}
+
+
+	console.log("\tCarousel");
 	return projectCarousel;
 }
 
 function GetGameLink(project) {
-	console.log((project.prj_link != "null") + " " + (project.has_webpage == true));
+	console.log("\tLink Compiling status... \n\tIs Link Null: " + (project.prj_link != "null") + "\n\tHas Webpage: " + (project.has_webpage == true));
 
+	console.log("\tLink");
 	return (project.prj_link == "null" || project.has_webpage == false) ? `` : `
     <div class="pr-playbtn">
         <a class="btn bg-secondary-30 w-100" href="${project.prj_link}" role="button">Play Now</a>
@@ -93,6 +105,7 @@ function MakeHTML(projects) {
 	var dataContainer = document.querySelector(".portfolio-gallery");
 
 	for (project of projects) {
+		console.log(project.title + " Starting Compilation...");
 		var projectID = "portfolio-" + project.id;
 		var projectCarouselID = projectID + "-Carousel";
 
@@ -136,7 +149,6 @@ function MakeHTML(projects) {
 </div>
 `
 		dataContainer.insertAdjacentHTML("beforeend", projectHtml);
-		console.log("finished " + project.title);
 
 	}
 }
