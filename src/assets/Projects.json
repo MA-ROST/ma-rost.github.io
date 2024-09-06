@@ -107,7 +107,10 @@
 		"title": "Prototype the Platformer",
 		"has_webpage": false,
 		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
-		"images": [],
+		"images": [ {
+			"link": "../assets/Images/Proto.webp",
+			"alt": ""
+		} ],
 		"priority": 3,
 		"desc": "A short game i created for an assignment to reenforce our skills in mechanic and level design.",
 		"notes": [
@@ -194,7 +197,15 @@
 		"has_webpage": true,
 		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
 		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
-		"images": [],
+		"images": [ {
+				"link": "../assets/Images/PTP_1.webp",
+				"alt": ""
+			},
+			{
+				"link": "../assets/Images/PTP_1.webp",
+				"alt": ""
+			}
+		],
 		"priority": 6,
 		"desc": "Guardian Roadblock is a short and sweet puzzle game where a strange stone guardian blocks your way into town. To win the game you must tell it the correct code.",
 		"notes": [
@@ -219,7 +230,10 @@
 		"has_webpage": false,
 		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
 		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
-		"images": [],
+		"images": [ {
+			"link": "../assets/Images/PTP_1.webp",
+			"alt": ""
+		} ],
 		"priority": 7,
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
 		"notes": [
