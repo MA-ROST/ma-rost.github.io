@@ -19,6 +19,6 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#050d07",
-    "liveServer.settings.port": 5502,
+    "liveServer.settings.port": 5500,
     "liveServer.settings.multiRootWorkspaceName": "ma-rost.github.io"
 }
