@@ -3,7 +3,7 @@ getData();
 
 
 async function getData() {
-	console.log("running...");
+	console.log("Running...");
 	const url = "../assets/Projects.json";
 	try {
 		const response = await fetch(url);
@@ -13,7 +13,7 @@ async function getData() {
 
 		const json = await response.json();
 		console.log(json);
-		console.log("complete");
+		console.log("Fetch Complete, Starting HTML Build");
 		MakeHTML(json)
 
 	}

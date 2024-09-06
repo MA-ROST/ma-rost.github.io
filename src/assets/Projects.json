@@ -12,11 +12,11 @@
 		},
 		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
 		"images": [ {
-				"link": "https://raw.githubusercontent.com/ma-rost/ma-rost.github.io/main/src/assets/Images/RCR_Matcha_Slide.gif",
+				"link": "https://github.com/ma-rost/ma-rost.github.io/blob/main/src/assets/Images/CharSel.webp?raw=true",
 				"alt": ""
 			},
 			{
-				"link": "https://github.com/ma-rost/ma-rost.github.io/blob/main/src/assets/Images/CharSel.webp?raw=true",
+				"link": "https://raw.githubusercontent.com/ma-rost/ma-rost.github.io/main/src/assets/Images/RCR_Matcha_Slide.gif",
 				"alt": ""
 			}
 		],
