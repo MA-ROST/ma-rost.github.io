@@ -3,4 +3,5 @@
 
 .parcel-cache/
 /.parcel-cache
+/.vs-code
 /dist
