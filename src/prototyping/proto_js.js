@@ -22,6 +22,10 @@ async function getData() {
 	}
 }
 
+function GetFileType(string) {
+	return string.split('.').pop();
+}
+
 
 function GetProjectTitle(project) {
 	var projectTitle = `<h2 class="pr-title border-bottom border-secondary">${project.name}</h2>`;
@@ -71,11 +75,24 @@ function GetProjectCarousel(project) {
 
 	var counter = 0;
 
+	var image = "";
+	var fileType = "";
+
 	if (project.images.length != 0) {
 		for (imgs of project.images) {
+			fileType = GetFileType(imgs.link);
+
+			if (fileType == "mp4" || fileType == "webM") {
+				console.info("\tVideo Found");
+				image = MakeVideoHTML(imgs);
+			}
+			else {
+				image = `<img src="${imgs.link}" class="d-block" alt="${imgs.alt}" />`;
+			}
+
 			projectCarousel += `<div class="carousel-item${counter == 0 ? ' active' : ''}">
-			<img src="${imgs.link}" class="d-block" alt="${imgs.alt}" />
-			</div>`;
+									${image}
+								</div>`;
 
 			counter++;
 		}
@@ -86,9 +103,26 @@ function GetProjectCarousel(project) {
 							</div>`;
 	}
 
-
 	console.log("\tCarousel");
 	return projectCarousel;
+}
+
+function CountCarouselData(carouselData) {
+	var counter = 0;
+	return carouselData.length;
+}
+
+function GetCarouselView(project) {
+	return (CountCarouselData(project.images)) > 1 ? `` : `d-none`;
+}
+
+function MakeVideoHTML(video) {
+	var html = `<video loop autoplay muted controlsList="nodownload">
+					<source src="${video.link}" type="video/mp4" />
+					<source src="${video.alt}" type="video/webm" />
+					Sorry, your browser doesn't support embedded videos.
+				</video>`;
+	return html
 }
 
 function GetGameLink(project) {
@@ -126,12 +160,12 @@ function MakeHTML(projects) {
                 <div class="carousel-inner">
                     ${GetProjectCarousel(project)}
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#${projectCarouselID}"
+                <button class="carousel-control-prev ${GetCarouselView(project)}" type="button" data-bs-target="#${projectCarouselID}"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#${projectCarouselID}"
+                <button class="carousel-control-next ${GetCarouselView(project)}" type="button" data-bs-target="#${projectCarouselID}"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>

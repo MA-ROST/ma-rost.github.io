@@ -12,11 +12,11 @@
 		},
 		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
 		"images": [ {
-				"link": "https://github.com/ma-rost/ma-rost.github.io/blob/main/src/assets/Images/CharSel.webp?raw=true",
+				"link": "../assets/Images/CharSel.webp",
 				"alt": ""
 			},
 			{
-				"link": "https://raw.githubusercontent.com/ma-rost/ma-rost.github.io/main/src/assets/Images/RCR_Matcha_Slide.gif",
+				"link": "../assets/Images/Matcha_Slide.webp",
 				"alt": ""
 			}
 		],
@@ -202,7 +202,7 @@
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/PTP_1.webp",
+				"link": "../assets/Images/PTP_2.webp",
 				"alt": ""
 			}
 		],
@@ -231,8 +231,8 @@
 		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
 		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
 		"images": [ {
-			"link": "../assets/Images/PTP_1.webp",
-			"alt": ""
+			"link": "../assets/Images/GoL.mp4",
+			"alt": "../assets/Images/GoL(1).webm"
 		} ],
 		"priority": 7,
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",

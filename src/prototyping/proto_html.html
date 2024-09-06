@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <head>
 	<meta charset="UTF-8">
@@ -61,68 +62,71 @@
 			<h1>Portfolio</h1>
 		</div>
 
-		<a class="btn btn-primary" href="../index.html" role="button">Working</a>
-	</div>
+		<a class="btn btn-primary" href="../index.html" role="button">Back to Original</a>
+		<a class="btn btn-primary" role="button" data-bs-toggle="collapse" href="#colorChart" role="button" aria-expanded="false" aria-controls="colorChart">Open Color Test Chart</a>
 
-
-
-	<div class="container">
-		<div class="row">
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-body-color)">--bs-body-color</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-body-bg)">--bs-body-bg</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-secondary-color)">--bs-secondary-color</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-secondary-bg)">--bs-secondary-bg</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-color)">--bs-tertiary-color</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-bg)">--bs-tertiary-bg</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-emphasis-color)">--bs-emphasis-color</div>
-			<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-border-color)">--bs-border-color</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary)">--bs-primary</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-bg-subtle)">--bs-primary-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-border-subtle)">--bs-primary-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-text-emphasis)">--bs-primary-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary)">--bs-secondary</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-bg-subtle)">--bs-secondary-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-border-subtle)">--bs-secondary-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-text-emphasis)">--bs-secondary-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary)">--bs-tertiary</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-bg-subtle)">--bs-tertiary-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-border-subtle)">--bs-tertiary-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-text-emphasis)">--bs-tertiary-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success)">--bs-success</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-bg-subtle)">--bs-success-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-border-subtle)">--bs-success-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-text-emphasis)">--bs-success-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger)">--bs-danger</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-bg-subtle)">--bs-danger-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-border-subtle)">--bs-danger-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-text-emphasis)">--bs-danger-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning)">--bs-warning</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-bg-subtle)">--bs-warning-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-border-subtle)">--bs-warning-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-text-emphasis)">--bs-warning-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info)">--bs-info</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-bg-subtle)">--bs-info-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-border-subtle)">--bs-info-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-text-emphasis)">--bs-info-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light)">--bs-light</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-bg-subtle)">--bs-light-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-border-subtle)">--bs-light-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-text-emphasis)">--bs-light-text-emphasis</div>
-			<div class="col-12 my-1"></div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark)">--bs-dark</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-bg-subtle)">--bs-dark-bg-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-border-subtle)">--bs-dark-border-subtle</div>
-			<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-text-emphasis)">--bs-dark-text-emphasis</div>
+		<div class="container p-3 collapse" id="colorChart">
+			<div class="row g-1">
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-body-color)">--bs-body-color</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-body-bg)">--bs-body-bg</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-secondary-color)">--bs-secondary-color</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-secondary-bg)">--bs-secondary-bg</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-color)">--bs-tertiary-color</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-bg)">--bs-tertiary-bg</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-emphasis-color)">--bs-emphasis-color</div>
+				<div class="col-6 p-3 rounded-2 border" style="background-color: var(--bs-border-color)">--bs-border-color</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary)">--bs-primary</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-bg-subtle)">--bs-primary-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-border-subtle)">--bs-primary-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-primary-text-emphasis)">--bs-primary-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary)">--bs-secondary</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-bg-subtle)">--bs-secondary-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-border-subtle)">--bs-secondary-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-secondary-text-emphasis)">--bs-secondary-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary)">--bs-tertiary</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-bg-subtle)">--bs-tertiary-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-border-subtle)">--bs-tertiary-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-tertiary-text-emphasis)">--bs-tertiary-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success)">--bs-success</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-bg-subtle)">--bs-success-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-border-subtle)">--bs-success-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-success-text-emphasis)">--bs-success-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger)">--bs-danger</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-bg-subtle)">--bs-danger-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-border-subtle)">--bs-danger-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-danger-text-emphasis)">--bs-danger-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning)">--bs-warning</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-bg-subtle)">--bs-warning-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-border-subtle)">--bs-warning-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-warning-text-emphasis)">--bs-warning-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info)">--bs-info</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-bg-subtle)">--bs-info-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-border-subtle)">--bs-info-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-info-text-emphasis)">--bs-info-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light)">--bs-light</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-bg-subtle)">--bs-light-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-border-subtle)">--bs-light-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-light-text-emphasis)">--bs-light-text-emphasis</div>
+				<div class="col-12 my-1"></div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark)">--bs-dark</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-bg-subtle)">--bs-dark-bg-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-border-subtle)">--bs-dark-border-subtle</div>
+				<div class="col-3 p-3 rounded-2 border" style="background-color: var(--bs-dark-text-emphasis)">--bs-dark-text-emphasis</div>
+			</div>
 		</div>
 	</div>
+
+
+
+
 
 	<script>
 		function onClickCollapse( element ) {
