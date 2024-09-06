@@ -1,43 +1,180 @@
+@use "sass:color";
 // Custom.scss
-// Option A: Include all of Bootstrap
+// Option B: Include parts of Bootstrap
 
-$primary: #3b71ca;
-$secondary: #636c72;
-$success: #14a44d;
-$danger: #dc4c64;
-$warning: #e4a11b;
-$info: #54b4d3;
-$light: #f7f7f7;
-$dark: #111315;
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions.scss";
 
-$min-contrast-ratio: 2.5;
+// 2. Include any default variable overrides here
+$enable-cssgrid: true;
+// $min-contrast-ratio: 2.5;
 
-.bg-success,
+$primary: #64dfdf;
+$primary-bg-subtle-dark: #022E2E;
+$primary-border-subtle-dark: #1B8787;
+
+$secondary: #6930c3;
+$body-bg-dark: #1c1427;
+
+/* .bg-success,
 .bg-dark,
 .bg-primary {
 	@extend .text-light;
-}
+} */
 
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables.scss";
+@import "../node_modules/bootstrap/scss/variables-dark.scss";
 
+// 4. Include any default map overrides here
 
-// Include any default variable overrides here (though functions won't be available)
+$tertiary: #80ffdb !default;
+$tertiary-text-dark: tint-color($tertiary, 40%) !default;
+$tertiary-bg-subtle-dark: #083327 !default;
+$tertiary-border-subtle-dark: #3DA98A !default;
+
+$custom-colors: ("tertiary": $tertiary);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps.scss";
+@import "../node_modules/bootstrap/scss/mixins.scss";
+@import "../node_modules/bootstrap/scss/root.scss";
+
+// Dark mode
+$custom-colors-text-dark: ("tertiary": $tertiary-text-dark);
+$custom-colors-bg-subtle-dark: ("tertiary": $tertiary-bg-subtle-dark);
+$custom-colors-border-subtle-dark: ("tertiary": $tertiary-border-subtle-dark);
+
+$theme-colors-text-dark: map-merge($theme-colors-text-dark, $custom-colors-text-dark);
+$theme-colors-bg-subtle-dark: map-merge($theme-colors-bg-subtle-dark, $custom-colors-bg-subtle-dark);
+$theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $custom-colors-border-subtle-dark);
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities.scss";
+@import "../node_modules/bootstrap/scss/reboot.scss";
+@import "../node_modules/bootstrap/scss/type.scss";
+@import "../node_modules/bootstrap/scss/images.scss";
+@import "../node_modules/bootstrap/scss/containers.scss";
+@import "../node_modules/bootstrap/scss/grid.scss";
+@import "../node_modules/bootstrap/scss/helpers.scss";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api.scss";
+
+// 8. Add additional custom code here
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+/* || Header and Typography  */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+	font-weight: 600;
+}
+
+body {
+	background-image: url(assets/Images/RCR_BG.webp);
+	background-size: cover;
+	background-attachment: fixed;
+	padding-top: 80px;
+}
+
+h5,
+.h5 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--bs-secondary-color);
+}
+
+/* || Opacity extension */
+
+@mixin background-opacity($color, $opacity) {
+	background: $color;
+	/*Fallback */
+	background: rgba($color, $opacity);
+}
+
+$alpha-stops: (10: 10%,
+	20: 20%,
+	30: 30%,
+	40: 40%,
+	50: 50%,
+	60: 60%,
+	70: 70%,
+	80: 80%,
+	90: 90%);
+
+@each $name,
+$child in $alpha-stops {
+	.bg-primary-#{$name} {
+		--bs-bg-opacity: #{$child};
+		background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+	}
+
+	.bg-secondary-#{$name} {
+		--bs-bg-opacity: #{$child};
+		background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+	}
+
+	.bg-secondary-subtle-#{$name} {
+		--bs-bg-opacity: #{$child};
+		background-color: rgba(shade-color($secondary, 80%), var(--bs-bg-opacity)) !important;
+	}
+
+	.bg-tertiary-#{$name} {
+		--bs-bg-opacity: #{$child};
+		background-color: rgba(var(--bs-tertiary-rgb), var(--bs-bg-opacity)) !important;
+	}
+}
+
+/* || Carousel */
+
+.aspect-carousel {
+	aspect-ratio: 4 / 3;
+	object-position: center;
+	overflow: hidden !important;
+	width: auto !important;
+	max-width: 500px;
+
+	border-radius: var(--bs-border-radius) !important;
+
+	margin-right: auto !important;
+	margin-left: auto !important;
+
+	@media (min-width: 992px) {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+}
+
+.aspect-carousel div,
+.aspect-carousel button {
+	height: 100% !important;
+}
+
+.aspect-carousel>.carousel-inner>.carousel-item>img {
+	object-fit: contain !important;
+	object-position: center;
+	height: 100% !important;
+	width: 100% !important;
+}
+
+/* || Carousel END */
+
 .navbar {
-	background: RGBA(
-		var(--bs-secondary-bg-rgb),
-		var(--bs-bg-opacity, 1)
-	) !important;
+	background: RGBA(var(--bs-secondary-bg-rgb),
+			var(--bs-bg-opacity, 1)) !important;
 	padding-right: 2rem !important;
 	padding-left: 2rem !important;
 	z-index: 1;
 }
 
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
+
 
 .lg-width-constraint {
 	max-width: 45%;
@@ -45,7 +182,8 @@ $min-contrast-ratio: 2.5;
 
 .expand:hover {
 	transform: scale(1.05, 1.05);
-	transition: 0.3s ease-in-out; /*sexy speed of the transition*/
+	transition: 0.3s ease-in-out;
+	/*sexy speed of the transition*/
 }
 
 .center {
@@ -78,9 +216,7 @@ $min-contrast-ratio: 2.5;
 	--bs-card-border-color: var(--bs-border-color-translucent);
 	--bs-card-border-radius: var(--bs-border-radius);
 	--bs-card-box-shadow: ;
-	--bs-card-inner-border-radius: calc(
-		var(--bs-border-radius) - (var(--bs-border-width))
-	);
+	--bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
 	--bs-card-cap-padding-y: 0.5rem;
 	--bs-card-cap-padding-x: 1rem;
 	--bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
@@ -102,20 +238,6 @@ $min-contrast-ratio: 2.5;
 	background-clip: border-box;
 }
 
-h1,
-.h1 {
-	font-size: 2em;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
-	font-weight: 600;
-}
-
 .arrow-pulse:hover {
 	animation-name: arrow-pulse;
 	animation-delay: var(--fa-animation-delay, 0s);
@@ -126,31 +248,26 @@ h3,
 }
 
 @keyframes arrow-pulse {
+
 	0%,
 	90% {
 		transform: scale(1);
 	}
+
 	100% {
 		transform: translateX(0px);
 		animation-timing-function: ease-out;
 	}
+
 	20% {
 		transform: translateX(5px);
 		animation-timing-function: ease-in;
 	}
+
 	45% {
 		transform: scale(var(--fa-beat-scale, 1.05));
 		color: (var(--bs-info));
 	}
-}
-
-body {
-	padding-top: 55px;
-}
-
-.youtube-video {
-	aspect-ratio: 16 / 9;
-	width: 100%;
 }
 
 .main-area-bg {
@@ -158,41 +275,21 @@ body {
 	background-color: var(--bs-body-bg);
 }
 
-.page-container {
-	background-image: url(https://drive.google.com/thumbnail?id=18OzZYFVZu8CnBCEbDdBR2BCuuX8VnhYF&sz=w1920);
-	background-attachment: fixed;
-}
-
-.project-divider {
-	border-bottom: 2px solid #495057;
-}
-
 .nav-title {
 	padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 	font-size: var(--bs-navbar-brand-font-size);
 }
 
-.flex-push-end {
-	flex-grow: 0;
-}
+
 
 .section {
 	padding: 64px;
 	border-radius: var(--bs-border-radius) !important;
 	--bs-bg-opacity: 1;
-	background-color: rgba(
-		var(--bs-body-bg-rgb),
-		var(--bs-bg-opacity)
-	) !important;
+	background-color: rgba(var(--bs-body-bg-rgb),
+			var(--bs-bg-opacity)) !important;
 
 	margin: 1rem auto;
-}
-
-h5,
-.h5 {
-	font-size: 1.25rem;
-	font-weight: 600;
-	color: var(--bs-secondary-color);
 }
 
 .nav-buttons {
@@ -220,4 +317,73 @@ h5,
 
 .github {
 	background-color: #1f6feb;
+}
+
+/* || PROJECT */
+
+.pr-title {
+	line-height: 1.5 !important;
+	border-width: 2px !important;
+	--bs-border-opacity: 0.5;
+	border-color: rgba(var(--bs-secondary-rgb), var(--bs-border-opacity)) !important;
+}
+
+.pr-desc {
+	margin-top: 0.5rem !important;
+	margin-bottom: 0px;
+}
+
+.pr-content {
+	margin-bottom: 1vh;
+}
+
+.pr-divider {
+	border-bottom: 2px solid #495057;
+}
+
+/* || Grid  */
+.pr-grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto 1fr;
+	gap: 0px 1.5rem;
+}
+
+.gr-item {
+	border: medium dotted green;
+}
+
+.gr-2r {
+	grid-row: span 2;
+}
+
+.gr-12 {
+	grid-column: span 12;
+}
+
+@media (min-width: 992px) {
+	.gr-lg-8 {
+		grid-column: 5/span 8;
+	}
+
+	.gr-lg-4 {
+		grid-column: span 4;
+	}
+}
+
+/* || Grid END */
+
+.youtube-video {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+}
+
+.flex-push-end {
+	flex-grow: 0;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
 }

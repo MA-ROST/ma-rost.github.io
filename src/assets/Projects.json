@@ -1,0 +1,296 @@
+[ {
+		"id": "rcr",
+		"title": "Rift City Rebels",
+		"tags": {
+			"platform": "UE5",
+			"pf_icon": "screwdriver-wrench",
+			"pf_type": "solid",
+			"team_size": 16,
+			"dev_time": "4 Months",
+			"dev_year": 2024,
+			"status": "complete"
+		},
+		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
+		"images": [ {
+				"link": "https://raw.githubusercontent.com/ma-rost/ma-rost.github.io/main/src/assets/Images/RCR_Matcha_Slide.gif",
+				"alt": ""
+			},
+			{
+				"link": "https://github.com/ma-rost/ma-rost.github.io/blob/main/src/assets/Images/CharSel.webp?raw=true",
+				"alt": ""
+			}
+		],
+		"has_webpage": true,
+		"prj_link": "https://dobibo.itch.io/rift-city-rebels",
+		"priority": 0,
+		"desc": "Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program.",
+		"notes": [
+			"Unreal Engine 5 UI Developer",
+			"> Created the Controller-To-UI system, allowing for both Keyboard and Game Controllers interact with menu's",
+			"> Developed Character Select UI, which allows multiple users to interact at once",
+			"Developer of Matcha/The Snowboarder character",
+			"> Assisted with creating movement based actions, such as snowboarding across platforms",
+			"Helped with designing the layout for the Game Manual"
+		]
+	},
+	{
+		"id": "gh",
+		"title": "Goblin Hunt VR",
+		"tags": {
+			"platform": "UE5",
+			"status": "complete",
+			"dev_year": 2023,
+			"team_size": 3,
+			"pf_icon": "screwdriver-wrench",
+			"pf_type": "solid",
+			"dev_time": "1 Month"
+		},
+		"has_webpage": true,
+		"prj_link": "https://tinycoderknight.itch.io/goblin-hunt",
+		"video_link": "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
+		"images": [ {
+				"link": "../assets/Images/Goblin_01.webp",
+				"alt": ""
+			},
+			{
+				"link": "../assets/Images/Goblin_02.webp",
+				"alt": ""
+			}
+		],
+		"priority": 1,
+		"desc": "Goblin Hunt VR is an arcade style shooter where you must catch bombs shot by goblins and throw them back at them to score points.",
+		"notes": [
+			"UI",
+			"Developed an enemy entity-manager system based on the mediator pattern",
+			"> This system determines which of the three squads should shoot at the player",
+			"Bomb reactivity",
+			"Score Managers"
+		]
+	},
+	{
+		"id": "zecro",
+		"title": "Zecromancer VR",
+		"tags": {
+			"platform": "UE5",
+			"status": "unfinished",
+			"dev_year": 2023,
+			"team_size": 9,
+			"pf_icon": "screwdriver-wrench",
+			"pf_type": "solid",
+			"dev_time": "6 Weeks"
+		},
+		"images": [ {
+			"link": "../assets/Images/Zecro.webp",
+			"alt": ""
+		} ],
+		"has_webpage": false,
+		"video_link": "https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview",
+		"priority": 2,
+		"desc": "A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination.",
+		"notes": [
+			"Created a Gesture System that compares the controller's movement in relation to the headset determining the direction of motion.",
+			"> Used playtests feedback to create multiple iterations of the Gesture system.",
+			"Created a nav-mesh based teleportation system that would bring the zombie AI's with the player."
+		]
+	},
+	{
+		"id": "ptp",
+		"tags": {
+			"status": "complete",
+			"dev_year": 2023,
+			"team_size": 1,
+			"platform": "Unity2D",
+			"pf_icon": "unity",
+			"pf_type": "brands",
+			"dev_time": "2 Weeks"
+		},
+		"title": "Prototype the Platformer",
+		"has_webpage": false,
+		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
+		"images": [ {
+			"link": "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
+			"alt": ""
+		} ],
+		"priority": 3,
+		"desc": "A short game i created for an assignment to reenforce our skills in mechanic and level design.",
+		"notes": [
+			"Custom Character Controller",
+			"> Player has coyote time, can jump with differing heights based on the time the key was down, and double jump",
+			"Checkpoint System that brings players back to it on death",
+			"Turret enemies with customizable rates and speeds",
+			"Location based area obscurer"
+		]
+	},
+	{
+		"id": "dronce",
+		"priority": 4,
+		"tags": {
+			"status": "complete",
+			"dev_year": 2023,
+			"team_size": 1,
+			"platform": "Unity3D",
+			"pf_icon": "unity",
+			"pf_type": "brands",
+			"dev_time": "1 Month"
+		},
+		"title": "Drone Race",
+		"has_webpage": false,
+		"video_link": "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
+		"images": [ {
+			"link": "../assets/Images/DroneRace.webp",
+			"alt": ""
+		} ],
+		"desc": "A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to create Starfox inspired character controllers",
+		"notes": [
+			"Character Controller",
+			"> Researched the way that <a href=\"#\" data-bs-toggle=\"tooltip\" data-bs-title=\"Using the Drone Racing League Simulator\">drones fly</a> to make flying feel as accurate as possible",
+			"Score System",
+			"Designed and Created all models and animations found in the game",
+			"> The Drone flyer was a particular highlight",
+			"> Researched professional drone flying competitions to gather real obstacles used in the races."
+		]
+	},
+	{
+		"id": "fta",
+		"tags": {
+			"platform": "UE5",
+			"status": "complete",
+			"dev_year": 2023,
+			"team_size": 2,
+			"pf_icon": "screwdriver-wrench",
+			"pf_type": "solid",
+			"dev_time": "2 Months"
+		},
+		"title": "Fear the Abyss",
+		"has_webpage": true,
+		"prj_link": "https://dobibo.itch.io/fear-the-abyss",
+		"video_link": "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
+		"images": [ {
+				"link": "../assets/Images/FTAB_UI_01.webp",
+				"alt": ""
+			},
+			{
+				"link": "../assets/Images/FTAB_UI_02.webp"
+			}
+		],
+		"priority": 5,
+		"desc": "Fear the Abyss is a 2.5d action game where you must navigate around and defend yourself with your trusty harpoon in order to escape the ship being invaded by a giant kracken.",
+		"notes": [
+			"Unreal Engine 5 UI Developer",
+			"> Custom Dialogue System with interchangeable sprites",
+			"Main Menu, Options Menu & Credits Menu",
+			"Tentacle Enemy AI"
+		]
+	},
+	{
+		"id": "guardian",
+		"tags": {
+			"platform": "UE5",
+			"status": "complete",
+			"dev_year": 2023,
+			"team_size": 1,
+			"pf_icon": "screwdriver-wrench",
+			"pf_type": "solid",
+			"dev_time": "1 Month"
+		},
+		"title": "Guardian Roadblock",
+		"has_webpage": true,
+		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
+		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
+		"images": [ {
+			"link": "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
+			"alt": ""
+		} ],
+		"priority": 6,
+		"desc": "Guardian Roadblock is a short and sweet puzzle game where a strange stone guardian blocks your way into town. To win the game you must tell it the correct code.",
+		"notes": [
+			"Paper2D",
+			"Velocity based Sprite Machine",
+			"Custom Branching Dialogue System with options",
+			"Dynamically layered sprites"
+		]
+	},
+	{
+		"id": "gol",
+		"tags": {
+			"status": "complete",
+			"dev_year": 2022,
+			"team_size": 1,
+			"platform": "C++",
+			"pf_icon": "file-code",
+			"pf_type": "solid",
+			"dev_time": "1 Month"
+		},
+		"title": "Game of Life",
+		"has_webpage": false,
+		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
+		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
+		"images": [ {
+			"link": "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
+			"alt": ""
+		} ],
+		"priority": 7,
+		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
+		"notes": [
+			"OpenFrameworks",
+			"Implements the <a href=\"https://rustwasm.github.io/book/game-of-life/rules.html\" target=\"_blank\">4 rules of life</a>.",
+			"The grid can be grown an shrunk",
+			"Cells can manually be filled on the grid by clicking on them or dragging your mouse",
+			"The cells can be both completely cleared, and randomly filled."
+		]
+	},
+	{
+		"id": "iys",
+		"tags": {
+			"status": "complete",
+			"dev_year": 2022,
+			"team_size": 1,
+			"platform": "C++",
+			"pf_icon": "file-code",
+			"pf_type": "solid",
+			"dev_time": "1 Month"
+		},
+		"title": "Invade your Space",
+		"has_webpage": false,
+		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
+		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
+		"images": [ {
+			"link": "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
+			"alt": ""
+		} ],
+		"priority": 8,
+		"desc": "A recreation of Space Invaders. This assignment was a test to our skills in what we had learned in C++, challenging us to rebuild iconic games with OpenFrameworks C++",
+		"notes": [
+			"OpenFrameworks",
+			"Features all core mechanics in Space Invaders"
+		]
+	},
+	{
+		"id": "errand",
+		"tags": {
+			"status": "complete",
+			"dev_year": 2021,
+			"team_size": 1,
+			"platform": "Unity3D",
+			"pf_icon": "unity",
+			"pf_type": "brands",
+			"dev_time": "2 Months"
+		},
+		"title": "Errand Run",
+		"has_webpage": true,
+		"prj_link": "https://tinycoderknight.itch.io/errand-run",
+		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
+		"images": [ {
+			"link": "https://lakelandescaperoom.com/wp-content/uploads/2016/09/image-placeholder-500x500.jpg",
+			"alt": ""
+		} ],
+		"priority": 9,
+		"desc": "The project I used to make my way into the RRC Polytechnic Game Development Course.",
+		"notes": [
+			"Sole Developer and Artist",
+			"Modeled and textures a majority of assets",
+			"Mesh instantiation in large amounts",
+			"Checklist system"
+		]
+	}
+]
