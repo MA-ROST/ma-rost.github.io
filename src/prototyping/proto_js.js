@@ -22,8 +22,17 @@ async function getData() {
 	}
 }
 
+
+
+
 function GetFileType(string) {
 	return string.split('.').pop();
+}
+
+function IsFileVideo(string) {
+	const fileType = GetFileType(string);
+
+	return fileType == "mp4" || fileType == "webM";
 }
 
 
@@ -68,33 +77,33 @@ function GetProjectNotes(project) {
 	return projectNotes;
 }
 
-function GetProjectCarousel(project) {
+function GetProjectCarousel(project, projectID) {
 	var projectCarousel = "";
 
 	// if first, make active
-
-	var counter = 0;
 
 	var image = "";
 	var fileType = "";
 
 	if (project.images.length != 0) {
-		for (imgs of project.images) {
-			fileType = GetFileType(imgs.link);
+		for (let i = 0; i < project.images.length; i++) {
+			const imageStruct = project.images[i];
+
+			fileType = GetFileType(imageStruct.link);
 
 			if (fileType == "mp4" || fileType == "webM") {
 				console.info("\tVideo Found");
-				image = MakeVideoHTML(imgs);
+				image = MakeVideoHTML(imageStruct);
 			}
 			else {
-				image = `<img src="${imgs.link}" class="d-block" alt="${imgs.alt}" />`;
+				image = `<img src="${imageStruct.link}" class="d-block" alt="${imageStruct.alt}" />`;
 			}
 
-			projectCarousel += `<div class="carousel-item${counter == 0 ? ' active' : ''}">
-									${image}
+			projectCarousel += `<div class="carousel-item${i == 0 ? ' active' : ''}">
+									<a data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
+										${image}
+									</a>
 								</div>`;
-
-			counter++;
 		}
 	}
 	else {
@@ -116,10 +125,8 @@ function GetCarouselView(project) {
 	return (CountCarouselData(project.images)) > 1 ? `` : `d-none`;
 }
 
-function MakeVideoHTML(video) {
-	var html = `<video loop autoplay muted controlsList="nodownload">
-					<source src="${video.link}" type="video/mp4" />
-					<source src="${video.alt}" type="video/webm" />
+function MakeVideoHTML(video, hasControls = false) {
+	var html = `<video src="${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
 					Sorry, your browser doesn't support embedded videos.
 				</video>`;
 	return html
@@ -144,45 +151,57 @@ function MakeHTML(projects) {
 		var projectCarouselID = projectID + "-Carousel";
 
 		var projectHtml = `
-<div id="${projectID}" class="portfolio-block container rounded bg-secondary-10 p-3 mt-2">
-    <div class="grid pr-grid">
-        <div class="gr-12 gr-lg-8 order-lg-1">
-            <h2 class="pr-title border-bottom border-secondary">${project.title}</h2>
-            <div class="pr-tags">
-                <ul class="d-flex flex-row flex-wrap li-none">
-                    ${GetProjectTags(project)}
-                </ul>
-            </div>
-        </div>
-        <div class="gr-12 gr-lg-4 gr-2r order-lg-0">
-            <div id="${projectCarouselID}"
-                class="carousel slide pointer-event bg-secondary-subtle-50 aspect-carousel">
-                <div class="carousel-inner">
-                    ${GetProjectCarousel(project)}
-                </div>
-                <button class="carousel-control-prev ${GetCarouselView(project)}" type="button" data-bs-target="#${projectCarouselID}"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next ${GetCarouselView(project)}" type="button" data-bs-target="#${projectCarouselID}"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <p class="pr-desc">${project.desc}</p>
-        </div>
-        <div class="gr-12 gr-lg-8 order-lg-2 d-flex flex-column grid-obj">
-            <ul class="pr-notes flex-grow-1">
-            ${GetProjectNotes(project)}
-            </ul>
-            ${GetGameLink(project)}
-        </div>
-    </div>
-</div>
-`
+	<div id = "${projectID}" class="portfolio-block container rounded bg-secondary-10 p-3 mt-2" >
+		<div class="grid pr-grid">
+			<div class="gr-12 gr-lg-8 order-lg-1">
+				<h2 class="pr-title border-bottom border-secondary">${project.title}</h2>
+				<div class="pr-tags">
+					<ul class="d-flex flex-row flex-wrap li-none">
+						${GetProjectTags(project)}
+					</ul>
+				</div>
+			</div>
+			<div class="gr-12 gr-lg-4 gr-2r order-lg-0">
+				<div id="${projectCarouselID}" class="carousel slide pointer-event bg-secondary-subtle-50 aspect-carousel">
+					<div class="carousel-inner">
+						${GetProjectCarousel(project, projectID)}
+					</div>
+					<button class="carousel-control-prev ${GetCarouselView(project)}" type="button"
+						data-bs-target="#${projectCarouselID}" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next ${GetCarouselView(project)}" type="button"
+						data-bs-target="#${projectCarouselID}" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+				<p class="pr-desc">${project.desc}</p>
+			</div>
+			<div class="gr-12 gr-lg-8 order-lg-2 d-flex flex-column grid-obj">
+				<ul class="pr-notes flex-grow-1">
+					${GetProjectNotes(project)}
+				</ul>
+				${GetGameLink(project)}
+			</div>
+		</div>
+	</ >
+	`
 		dataContainer.insertAdjacentHTML("beforeend", projectHtml);
-
 	}
+
+	const imageModal = document.getElementById('imagePreviewModal')
+	const modalImageBody = document.getElementById('modalImageBody')
+	const imageModalLabel = document.getElementById('imagePreviewModalLabel')
+
+	imageModal.addEventListener('show.bs.modal', (data) => {
+
+		modalImageBody.innerHTML = data.relatedTarget.innerHTML;
+		modalImageBody.firstElementChild.className += " w-100"
+
+		console.log(modalImageBody.firstElementChild);
+		imageModalLabel.innerText = modalImageBody.firstElementChild.src.split('/').pop()
+	})
 }
+

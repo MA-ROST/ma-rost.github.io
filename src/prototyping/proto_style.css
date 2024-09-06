@@ -20213,8 +20213,8 @@ body {
   height: 100% !important;
 }
 
-.aspect-carousel > .carousel-inner > .carousel-item > img,
-.aspect-carousel > .carousel-inner > .carousel-item > video {
+.aspect-carousel > .carousel-inner > .carousel-item img,
+.aspect-carousel > .carousel-inner > .carousel-item video {
   -o-object-fit: contain !important;
      object-fit: contain !important;
   -o-object-position: center;

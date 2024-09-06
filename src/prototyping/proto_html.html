@@ -58,6 +58,23 @@
 	<!-- END NAV -->
 
 	<div class="container p-4 bg-body rounded">
+		<!-- Modal -->
+		<div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog modal-dialog-scrollable modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="imagePreviewModalLabel">Modal title</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" id="modalImageBody">
+						...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="portfolio" class="portfolio-gallery rounded container section">
 			<h1>Portfolio</h1>
 		</div>
@@ -159,6 +176,9 @@
 		const tooltipList = [...tooltipTriggerList].map(
 			(tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
 		);
+
+		
+
 	</script>
 	<script type="module" src="../js/main.js"></script>
 </body>
