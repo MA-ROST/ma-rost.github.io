@@ -14,7 +14,7 @@ async function getData() {
 		const json = await response.json();
 		console.log(json);
 		console.log("Fetch Complete, Starting HTML Build");
-		MakeHTML(json)
+		MakePortfolioProjectHTML(json)
 
 	}
 	catch (error) {
@@ -142,7 +142,7 @@ function GetGameLink(project) {
     </div>`;
 }
 
-function MakeHTML(projects) {
+function MakePortfolioProjectHTML(projects) {
 	var dataContainer = document.querySelector(".portfolio-gallery");
 
 	for (project of projects) {
@@ -191,12 +191,15 @@ function MakeHTML(projects) {
 		dataContainer.insertAdjacentHTML("beforeend", projectHtml);
 	}
 
+	ConnectModalEvent();
+}
+
+function ConnectModalEvent() {
 	const imageModal = document.getElementById('imagePreviewModal')
 	const modalImageBody = document.getElementById('modalImageBody')
 	const imageModalLabel = document.getElementById('imagePreviewModalLabel')
 
 	imageModal.addEventListener('show.bs.modal', (data) => {
-
 		modalImageBody.innerHTML = data.relatedTarget.innerHTML;
 		modalImageBody.firstElementChild.className += " w-100"
 

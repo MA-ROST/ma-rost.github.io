@@ -198,11 +198,11 @@
 		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
 		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
 		"images": [ {
-				"link": "../assets/Images/PTP_1.webp",
+				"link": "../assets/Images/GR_1.webp",
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/PTP_2.webp",
+				"link": "../assets/Images/GR_2.webp",
 				"alt": ""
 			}
 		],
@@ -232,7 +232,7 @@
 		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
 		"images": [ {
 			"link": "../assets/Images/GoL.mp4",
-			"alt": "../assets/Images/GoL(1).webm"
+			"alt": "../assets/Images/GoL.webm"
 		} ],
 		"priority": 7,
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
@@ -259,7 +259,10 @@
 		"has_webpage": false,
 		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
 		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
-		"images": [],
+		"images": [ {
+			"link": "../assets/Images/IyS.webp",
+			"alt": ""
+		} ],
 		"priority": 8,
 		"desc": "A recreation of Space Invaders. This assignment was a test to our skills in what we had learned in C++, challenging us to rebuild iconic games with OpenFrameworks C++",
 		"notes": [
