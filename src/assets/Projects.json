@@ -285,7 +285,10 @@
 		"has_webpage": true,
 		"prj_link": "https://tinycoderknight.itch.io/errand-run",
 		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
-		"images": [],
+		"images": [ {
+			"link": "../assets/Images/ER.webp",
+			"alt": ""
+		} ],
 		"priority": 9,
 		"desc": "The project I used to make my way into the RRC Polytechnic Game Development Course.",
 		"notes": [
