@@ -19,6 +19,9 @@ async function getData() {
 	const url = "../assets/Projects.json";
 	try {
 		const response = await fetch(url);
+
+		console.log(response.url);
+
 		if (!response.ok) {
 			throw new Error(`Response status: ${response.status}`);
 		}
