@@ -1,12 +1,3 @@
-const domain = `${location.protocol}//${location.host}`;
-
-PrintLocationData();
-
-// DEBUG FUNCTION
-function PrintLocationData() {
-	console.log(`Host: ${location.host}\nHostName: ${location.hostname}\nPort: ${location.port}\nHref: ${location.href}\nPathname: ${location.pathname}\nProtocol: ${location.protocol}`);
-}
-
 // Get JSON
 getData();
 
