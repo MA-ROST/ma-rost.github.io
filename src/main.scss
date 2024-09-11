@@ -14,7 +14,9 @@ $primary-bg-subtle-dark: #022E2E;
 $primary-border-subtle-dark: #1B8787;
 
 $secondary: #6930c3;
-// $body-bg-dark: #1c1427;
+$body-bg-dark: #1b1528;
+$body-tertiary-bg-dark: #201934;
+$body-secondary-bg-dark: #281a3d;
 
 /* .bg-success,
 .bg-dark,
@@ -91,6 +93,44 @@ h5,
 	color: var(--bs-secondary-color);
 }
 
+.flex-push-end {
+	flex-grow: 0;
+}
+
+div .li-none {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.center {
+	margin: auto;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.img-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+.youtube-video {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.lg-width-constraint {
+	max-width: 45%;
+}
+
 /* || Opacity extension */
 
 @mixin background-opacity($color, $opacity) {
@@ -157,7 +197,8 @@ $child in $alpha-stops {
 	height: 100% !important;
 }
 
-.aspect-carousel>.carousel-inner>.carousel-item>img {
+.aspect-carousel>.carousel-inner>.carousel-item img,
+.aspect-carousel>.carousel-inner>.carousel-item video {
 	object-fit: contain !important;
 	object-position: center;
 	height: 100% !important;
@@ -167,18 +208,11 @@ $child in $alpha-stops {
 /* || Carousel END */
 
 .navbar {
-	background: RGBA(var(--bs-secondary-bg-rgb),
-			var(--bs-bg-opacity, 1)) !important;
 	padding-right: 2rem !important;
 	padding-left: 2rem !important;
 	z-index: 1;
 }
 
-
-
-.lg-width-constraint {
-	max-width: 45%;
-}
 
 .expand:hover {
 	transform: scale(1.05, 1.05);
@@ -186,19 +220,6 @@ $child in $alpha-stops {
 	/*sexy speed of the transition*/
 }
 
-.center {
-	margin: auto;
-	width: 50%;
-	border: 3px solid green;
-	padding: 10px;
-}
-
-.img-center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
-}
 
 .project-page {
 	margin-left: auto;
@@ -281,13 +302,10 @@ $child in $alpha-stops {
 }
 
 
-
 .section {
 	padding: 64px;
 	border-radius: var(--bs-border-radius) !important;
-	--bs-bg-opacity: 1;
-	background-color: rgba(var(--bs-body-bg-rgb),
-			var(--bs-bg-opacity)) !important;
+	background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
 
 	margin: 1rem auto;
 }
@@ -372,18 +390,3 @@ $child in $alpha-stops {
 }
 
 /* || Grid END */
-
-.youtube-video {
-	aspect-ratio: 16 / 9;
-	width: 100%;
-}
-
-.flex-push-end {
-	flex-grow: 0;
-}
-
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}

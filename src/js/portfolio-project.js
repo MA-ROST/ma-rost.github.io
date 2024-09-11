@@ -1,384 +1,237 @@
+const domain = `${location.protocol}//${location.host}`;
+
+PrintLocationData();
+
+// DEBUG FUNCTION
+function PrintLocationData() {
+	console.log(`Host: ${location.host}\nHostName: ${location.hostname}\nPort: ${location.port}\nHref: ${location.href}\nPathname: ${location.pathname}\nProtocol: ${location.protocol}`);
+}
+
+// Get JSON
+getData();
+
+async function getData() {
+	console.log("Running...");
+
+	const url = domain + "/src/assets/Projects.json";
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`Response status: ${response.status}`);
+		}
+
+		const json = await response.json();
+		console.log(json);
+		console.log("Fetch Complete, Starting HTML Build");
+		MakePortfolioProjectHTML(json)
+	}
+	catch (error) {
+		console.error(error.message);
+	}
+}
+
+// MAIN HTML
+
+function MakePortfolioProjectHTML(projects) {
+	const dataContainer = document.querySelector(".portfolio-gallery");
+
+	for (project of projects) {
+		console.log(project.title + " Starting Compilation...");
+		const projectID = "portfolio-" + project.id;
+		const projectCarouselID = projectID + "-Carousel";
+
+		var projectHtml = `
+	<div id = "${projectID}" class="portfolio-block container rounded bg-secondary-10 p-3 mt-2" >
+		<div class="grid pr-grid">
+			<div class="gr-12 gr-lg-8 order-lg-1">
+				<h2 class="pr-title border-bottom border-secondary">${project.title}</h2>
+				<div class="pr-tags">
+					<ul class="d-flex flex-row flex-wrap li-none">
+						${GetProjectTags(project.tags)}
+					</ul>
+				</div>
+			</div>
+			<div class="gr-12 gr-lg-4 gr-2r order-lg-0">
+				<div id="${projectCarouselID}" class="carousel slide pointer-event bg-secondary-subtle-50 aspect-carousel">
+					<div class="carousel-inner">
+						${GetProjectCarousel(project.media)}
+					</div>
+					${CanMakeCarouselButtons(project.media) ? `${MakeCarouselButtons(projectCarouselID)}` : ``}
+				</div>
+				<p class="pr-desc">${project.desc}</p>
+			</div>
+			<div class="gr-12 gr-lg-8 order-lg-2 d-flex flex-column grid-obj">
+				<ul class="pr-notes flex-grow-1">
+					${GetProjectNotes(project.notes)}
+				</ul>
+				${GetGameLink(project.prj_link, project.has_webpage)}
+			</div>
+		</div>
+	</ >
+	`
+		dataContainer.insertAdjacentHTML("beforeend", projectHtml);
+	}
+
+	ConnectModalEvent();
+}
+
+function ConnectModalEvent() {
+	const imageModal = document.getElementById('imagePreviewModal')
+	const modalImageBody = document.getElementById('modalImageBody')
+	const imageModalLabel = document.getElementById('imagePreviewModalLabel')
+
+	imageModal.addEventListener('show.bs.modal', (data) => {
+		modalImageBody.innerHTML = data.relatedTarget.innerHTML;
+		modalImageBody.firstElementChild.className += " w-100"
+		imageModalLabel.innerText = modalImageBody.firstElementChild.src.split('/').pop()
+	})
+}
+// Utilities 
+
+function GetFileType(string) {
+	const fileSuffix = string.split('.').pop();
+
+	switch (fileSuffix.toLowerCase()) {
+		case "mp4" || "webM" || "mov":
+			return "video";
+			break;
+		case "png" || "jpg" || "gif" || "tiff":
+			return "image";
+			break;
+		default:
+			break;
+	}
+
+	return string.split('.').pop();
+}
+
+// Setup basic Project
+
+function GetProjectTitle(project) {
+	var projectTitle = `<h2 class="pr-title border-bottom border-secondary">${project.name}</h2>`;
+	console.log("\tTitle");
+	return `<h2 class="pr-title border-bottom border-secondary">${project.name}</h2>`;
+}
+
+function GetProjectNotes(projectNotes) {
+	var projectNotesHTML = "";
+	for (notes of projectNotes) {
+		// Should the note be indented?
+		if (notes[0] == ">") {
+			projectNotesHTML += `<ul><li class="proj-note-row">${notes.slice(2, notes.length,)}</li></ul>`;
+		}
+		else {
+			projectNotesHTML += `<li class="proj-note-row">${notes}</li>`;
+		}
+	}
+	console.log("\tNotes");
+	return projectNotesHTML;
+}
+
+function GetProjectTags(projectTags) {
+	const tagContent = [
+		`<i class="fa-${projectTags.pf_type} fa-${projectTags.pf_icon} me-2"></i> ${projectTags.platform}`,
+		`<i class="fa-solid fa-users me-2"></i> ${projectTags.team_size}`,
+		`<i class="fa-solid fa-clock me-2"></i> ${projectTags.dev_time}`,
+		`<i class="fa-solid fa-calendar-days me-2"></i> ${projectTags.dev_year}`,
+	];
+
+	var projectTagHTML = "";
+	for (tag of tagContent) {
+		projectTagHTML += `<li class="me-2 mt-2">
+                <div class="d-flex align-items-center rounded-pill bg-primary-50 px-3 py-1">${tag}</div>
+            	</li>`;
+	}
+	console.log("\tTags");
+	return projectTagHTML;
+}
+
+function GetGameLink(link, hasWebpage) {
+	console.log("\tLink Compiling status... \n\tIs Link Null: " + (link != "null") + "\n\tHas Webpage: " + (hasWebpage == true));
+
+	console.log("\tLink");
+	return (link == "null" || project.has_webpage == false) ? `` : `
+    <div class="pr-playbtn">
+        <a class="btn bg-secondary-30 w-100" href="${link}" role="button">Play Now</a>
+    </div>`;
+}
+
+// CAROUSEL
+
+/**
+ * Creates innerHTML for a project's carousel.
+ * @param {string[]} projectMediaStruct Array of struct containing string (image link) and a second string (image alt)
+ * @returns the contents of the carousel, with media displayed
+ */
+function GetProjectCarousel(projectMediaStruct) {
+
+	const prMediaLength = projectMediaStruct.length;
+	// if the project has no images/videos insert a placeholder
+	if (prMediaLength == 0) {
+		return `<div class="carousel-item">
+								<div class="d-block placeholder"></div>
+							</div>`;
+	}
+
+	// if the project has images/videos loop through the contents and create videos
+	var media = "";
+	var projectCarousel = "";
+
+	for (let i = 0; i < prMediaLength; i++) {
+		const mediaStruct = projectMediaStruct[i];
+
+		// Determine if the media is a video or image, then make the corresponding HTML
+		media = (GetFileType(mediaStruct.link) == "video") ? MakeVideoHTML(mediaStruct) : MakeImageHTML(mediaStruct);
+
+		projectCarousel += `<div class="carousel-item${i == 0 ? ' active' : ''}">
+									<a data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
+										${media}
+									</a>
+								</div>`;
+	}
+
+	console.log("\tCarousel");
+	return projectCarousel;
+}
+
+/**
+ * Determines if a carousel should have buttons to switch images.
+ * @param {*} projectMediaStruct Array of struct containing string (image link) and a second string (image alt)
+ * @returns boolean
+ */
+function CanMakeCarouselButtons(projectMediaStruct) {
+	return (projectMediaStruct.length) > 1;
+}
+
+function MakeCarouselButtons(carouselID) {
+	return `<button class="carousel-control-prev" type="button"
+						data-bs-target="#${carouselID}" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#${carouselID}" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>`;
+}
+
+function MakeVideoHTML(video, hasControls = false) {
+	return `<video src="${domain}${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
+					Sorry, your browser doesn't support embedded videos.
+				</video>`;
+}
+
+function MakeImageHTML(image) {
+	return `<img src="${domain}${image.link}" class="d-block" alt="${image.alt}" />`;
+}
+
+
 const el = document.getElementById("MyName");
 el.addEventListener("click", modifyText);
 
 function modifyText() {
 	const btn = document.getElementById("workspaceBtn");
 	console.log(btn.innerHTML);
-
 	btn.className = "nav-item";
-}
-
-var projects = [{
-	id: "rcr",
-	title: "Rift City Rebels",
-	has_webpage: true,
-	tags: {
-		platform: "UE5",
-		pf_icon: "screwdriver-wrench",
-		pf_type: "solid",
-		team_size: 16,
-		dev_time: "4 Months",
-		dev_year: 2024,
-		status: "complete",
-	},
-	video_link: "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
-	prj_link: "https://dobibo.itch.io/rift-city-rebels",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Unreal Engine 5 UI Developer",
-		"> Created the Controller-To-UI system, allowing for both Keyboard and Game Controllers interact with menu's",
-		"> Developed Character Select UI, which allows multiple users to interact at once",
-		"Developer of Matcha/The Snowboarder character",
-		"> Assisted with creating movement based actions, such as snowboarding across platforms",
-		"Helped with designing the layout for the Game Manual",
-	],
-	prj_short_desc: "Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program.",
-},
-{
-	id: "gh",
-	title: "Goblin Hunt VR",
-	has_webpage: true,
-	tags: {
-		platform: "UE5",
-		pf_icon: "screwdriver-wrench",
-		pf_type: "solid",
-		team_size: 3,
-		dev_time: "1 Month",
-		dev_year: 2023,
-		status: "complete",
-	},
-	video_link: "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
-	prj_link: "https://tinycoderknight.itch.io/goblin-hunt",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"UI",
-		"Developed an enemy entity-manager system based on the mediator pattern",
-		"> This system determines which of the three squads should shoot at the player",
-		"Bomb reactivity",
-		"Score Managers",
-	],
-	prj_short_desc: "Goblin Hunt VR is an arcade style shooter where you must catch bombs shot by goblins and throw them back at them to score points. ",
-},
-{
-	id: "zecro",
-	title: "Zecromancer VR",
-	has_webpage: false,
-	tags: {
-		platform: "UE5",
-		pf_icon: "screwdriver-wrench",
-		pf_type: "solid",
-		team_size: 9,
-		dev_time: "6 Weeks",
-		dev_year: 2023,
-		status: "unfinished",
-	},
-	video_link: "https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview",
-	prj_link: "null",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Created a Gesture System that compares the controller's movement in relation to the headset determining the direction of motion.",
-		"> Used playtests feedback to create multiple iterations of the Gesture system.",
-		"Created a nav-mesh based teleportation system that would bring the zombie AI's with the player.",
-	],
-	prj_short_desc: "A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination.",
-},
-{
-	id: "ptp",
-	title: "Prototype the Platformer",
-	has_webpage: false,
-	tags: {
-		platform: "Unity2D",
-		pf_icon: "unity",
-		pf_type: "brands",
-		team_size: 1,
-		dev_time: "2 Weeks",
-		dev_year: 2023,
-		status: "complete",
-	},
-	video_link: "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
-	prj_link: "null",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Custom Character Controller",
-		"> Player has coyote time, can jump with differing heights based on the time the key was down, and double jump",
-		"> Player can ",
-		"Checkpoint System that brings players back to it on death",
-		"Turret enemies with customizable rates and speeds",
-		"Location based area obscurer",
-	],
-	prj_short_desc: "A short game i created for an assignment to reenforce our skills in mechanic and level design.",
-},
-{
-	id: "dronce",
-	title: "Drone Race",
-	has_webpage: false,
-	tags: {
-		platform: "Unity3D",
-		pf_icon: "unity",
-		pf_type: "brands",
-		team_size: 1,
-		dev_time: "1 Month",
-		dev_year: 2023,
-		status: "complete",
-	},
-	video_link: "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
-	prj_link: "null",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Character Controller",
-		`> Researched the way that <a href="#" data-bs-toggle="tooltip" data-bs-title="Using the Drone Racing League Simulator">drones fly</a> to make flying feel as accurate as possible`,
-		"Score System",
-		"Designed and Created all models and animations found in the game",
-		"> The Drone flyer was a particular highlight",
-		"> Researched professional drone flying competitions to gather real obstacles used in the races.",
-	],
-	prj_short_desc: "A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to create Starfox inspired character controllers",
-},
-{
-	id: "fta",
-	title: "Fear the Abyss",
-	has_webpage: true,
-	tags: {
-		platform: "UE5",
-		pf_icon: "screwdriver-wrench",
-		pf_type: "solid",
-		team_size: 2,
-		dev_time: "2 Months",
-		dev_year: 2023,
-		status: "complete",
-	},
-	video_link: "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
-	prj_link: "https://dobibo.itch.io/fear-the-abyss",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Lead UI Developer",
-		"> Custom Dialogue System with interchangeable sprites",
-		"Main Menu, Options Menu & Credits Menu",
-		"Tentacle Enemy AI",
-	],
-	prj_short_desc: "Fear the Abyss is a 2.5d action game where you must navigate around and defend yourself with your trusty harpoon in order to escape the ship being invaded by a giant kracken.",
-},
-{
-	id: "guardian",
-	title: "Guardian Roadblock",
-	has_webpage: true,
-	tags: {
-		platform: "UE5",
-		pf_icon: "screwdriver-wrench",
-		pf_type: "solid",
-		team_size: 1,
-		dev_time: "1 Month",
-		dev_year: 2023,
-		status: "complete",
-	},
-	video_link: "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
-	prj_link: "https://tinycoderknight.itch.io/guardian-roadblock",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Paper2D",
-		"Velocity based Sprite Machine",
-		"Custom Branching Dialogue System with options",
-		"Dynamically layered sprites",
-	],
-	prj_short_desc: "Guardian Roadblock is a short and sweet puzzle game where a strange stone guardian blocks your way into town. To win the game you must tell it the correct code. ",
-},
-{
-	id: "gol",
-	title: "Game of Life",
-	has_webpage: true,
-	tags: {
-		platform: "C++",
-		pf_icon: "file-code",
-		pf_type: "solid",
-		team_size: 1,
-		dev_time: "1 Month",
-		dev_year: 2022,
-		status: "complete",
-	},
-	video_link: "https://www.youtube.com/embed/X_P_8SaY34o",
-	prj_link: "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
-	prj_icon: "github",
-	prj_notes: [
-		"OpenFrameworks",
-		'Implements the <a href="https://rustwasm.github.io/book/game-of-life/rules.html" target="_blank">4 rules of life</a>.',
-		"The grid can be grown an shrunk",
-		"Cells can manually be filled on the grid by clicking on them or dragging your mouse",
-		"The cells can be both completely cleared, and randomly filled.",
-	],
-	prj_short_desc: "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
-},
-{
-	id: "IYS",
-	title: "Invade Your Space",
-	has_webpage: true,
-	tags: {
-		platform: "C++",
-		pf_icon: "file-code",
-		pf_type: "solid",
-		team_size: 1,
-		dev_time: "1 Month",
-		dev_year: 2022,
-		status: "complete",
-	},
-	video_link: "https://www.youtube.com/embed/YCeItVf0FqQ",
-	prj_link: "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
-	prj_icon: "github",
-	prj_notes: [
-		"OpenFrameworks",
-		"Features all core mechanics in Space Invaders",
-	],
-	prj_short_desc: "A recreation of Space Invaders. This assignment was a test to our skills in what we had learned in C++, challenging us to rebuild iconic games with OpenFrameworks C++",
-},
-{
-	id: "errand",
-	title: "Errand Run",
-	has_webpage: true,
-	tags: {
-		platform: "Unity3D",
-		pf_icon: "unity",
-		pf_type: "brands",
-		team_size: 1,
-		dev_time: "2 months",
-		dev_year: 2021,
-		status: "complete",
-	},
-	video_link: "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
-	prj_link: "https://tinycoderknight.itch.io/errand-run",
-	prj_icon: "itch-io",
-	prj_notes: [
-		"Sole Developer and Artist",
-		"Modeled and textures a majority of assets",
-		"Mesh instantiation in large amounts",
-		"Checklist system",
-	],
-	prj_short_desc: "The project I used to make my way into the RRC Polytechnic Game Development Course.",
-},
-];
-
-function GetProjectStatusIcon(project) {
-	var projectStatus = "";
-	if (project.tags.status == "complete") {
-		projectStatus = `circle-check`;
-	}
-	else if (project.tags.status == "unfinished") {
-		projectStatus = `circle-stop`;
-	}
-	else if (project.tags.status == "prototype") {
-		projectStatus = `circle-info`;
-	}
-	else if (project.tags.status == "in progress") {
-		projectStatus = `clock`;
-	}
-	else if (project.tags.status == "on hold") {
-		projectStatus = `circle-pause`;
-	}
-
-	return projectStatus;
-}
-
-function GetProjectNotes(project) {
-	var projectNotes = "";
-	for (notes of project.prj_notes) {
-		if (notes[0] == ">") {
-			projectNotes += `<ul><li class="proj-note-row">${notes.slice(
-				2,
-				notes.length,
-			)}</li></ul>`;
-		}
-		else {
-			projectNotes += `<li class="proj-note-row">${notes}</li>`;
-		}
-	}
-	return projectNotes;
-}
-
-function GetProjectTitle(project) {
-	var projectTitle = "";
-	if (project.has_webpage) {
-		projectTitle = `
-			<a class="d-inline-flex text-decoration-none align-items-center text-body" href="${project.prj_link}" target="_blank" role="button" aria-disabled="true">
-				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2> 
-				<span class="d-inline-block px-2"><i class="fa-solid fa-arrow-up fa-lg fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i></span>
-			</a>`;
-	}
-	else {
-		projectTitle = `
-			<a class="d-inline-flex text-decoration-none align-items-center text-body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="This Project has no playable version">
-				<h2 class="fw-semibold port-prog-name d-inline-block">${project.title}</h2>
-				<span class="d-inline-block px-2"><i class="fa-solid fa-arrow-up fa-lg fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i></span>
-			</a>`;
-	}
-
-	return projectTitle;
-}
-
-function GetProjectTags(project) {
-	var projectTags = "";
-
-	const tagContent = [
-		`<i class="fa-${project.tags.pf_type} fa-${project.tags.pf_icon} me-2"></i> ${project.tags.platform}`,
-		`<i class="fa-solid fa-users me-2"></i> ${project.tags.team_size}`,
-		`<i class="fa-solid fa-clock me-2"></i> ${project.tags.dev_time}`,
-		`<i class="fa-solid fa-calendar-days me-2"></i> ${project.tags.dev_year}`,
-	];
-
-	var text = "";
-	for (tag of tagContent) {
-		text = `<li class="me-2 mt-2">
-					<div class="d-flex align-items-center rounded-pill bg-primary-50 px-3 py-1">${tag}</div>
-				</li>`;
-		projectTags += text;
-	}
-
-	return projectTags;
-}
-
-function HasGameLink(project) {
-	return project.prj_link == "null";
-}
-
-var dataContainer = document.querySelector(".portfolio-gallery");
-for (project of projects) {
-	var projectCollapseID = "collapseNotes" + project.id;
-
-	var projectHtml = `
-		<div class="col">
-			<div class="portfolio-project bg-body-tertiary card overflow-hidden">
-				<div class="">
-					<iframe
-						src="${project.video_link}"
-						allow="autoplay"
-						class="rounded youtube-video"></iframe>
-				</div>
-				<div class="mx-4">
-					<div class="d-flex align-items-center mt-2">
-						${GetProjectTitle(project)}
-					</div>
-					<div class="mb-2"> 
-						<div class="port-proj-tags mb-2 mx-auto gy-5">
-							<ul class="d-flex flex-row pl-0" style="list-style: none; padding-left: 0px;">
-								${GetProjectTags(project)}
-							</ul>
-						</div>
-						<div class="row">
-							<p class="col mb-1">${project.prj_short_desc}
-							</p>
-							<a class="col-auto float-end mt-auto" data-bs-toggle="collapse"
-								href="#${projectCollapseID}" role="button" aria-expanded="false"
-								aria-controls="${projectCollapseID}" id="collapser" onclick="onClickCollapse(this)" >
-								<i class="fa-solid fa-caret-up" data-toggle="tooltip" title="Open Project notes"></i>
-							</a>
-						</div>
-						<div class="collapse show" id="${projectCollapseID}">
-							<hr class="my-2">
-							<ul class="proj-notes">
-								${GetProjectNotes(project)}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>`;
-	dataContainer.insertAdjacentHTML("beforeend", projectHtml);
-	console.log("finished " + project.title);
 }

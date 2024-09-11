@@ -13,7 +13,7 @@
 
 <body>
 	<!-- NAV -->
-	<nav id="header" class="navbar navbar-expand-lg navbar-inverse header fixed-top ">
+	<nav id="header" class="navbar navbar-expand-lg navbar-inverse header fixed-top bg-secondary-subtle">
 		<div class="container-xxl">
 			<a class="navbar-brand fw-semibold" href="#">Marissa Rowles-Stewart</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,11 +61,32 @@
 			</div>
 		</div>
 	</nav>
+
+	<div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog modal-dialog-scrollable modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="imagePreviewModalLabel">Modal title</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" id="modalImageBody">
+					...
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- END NAV -->
+	<div class="container alert alert-info" role="alert">
+		This website is going through some style changes! please be patient as updates roll in!
+	</div>
+
+
 	<div id="container" class="page-container py-md-0 py-5">
 		<div data-bs-spy="scroll" class="p-4">
-			<div class="container p-4 bg-body-tertiary rounded">
-				<div id="landing" class="rounded container section">
+			<div class="container p-4 bg-body rounded">
+				<div id="landing" class="rounded container section bg-body-tertiary">
 					<div id="intro">
 						<h3 id="MyName">UI & Game Developer</h3>
 						<p>Hi, I'm Marissa, a game developer from Manitoba, Canada.</p>
@@ -136,7 +157,7 @@
 
 					<div class="tab-content py-2" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="nav-prog-port" role="tabpanel" aria-labelledby="nav-prog-port-tab" tabindex="0">
-							<div class="portfolio-gallery row row-cols-1 row-cols-lg-2 g-2"></div>
+							<div class="portfolio-gallery container px-0 mx-0"></div>
 						</div>
 						<div class="tab-pane fade" id="nav-lvl-des" role="tabpanel" aria-labelledby="nav-lvl-des-tab" tabindex="0">
 							TBA...
@@ -150,7 +171,7 @@
 		</div>
 	</div>
 
-	<script src="./js/portfolio-project.js"></script>
+	<script type="text/javascript" src="./js/portfolio-project.js"></script>
 	<script>
 		function onClickCollapse( element ) {
 			if ( element.ariaExpanded == "true" ) {

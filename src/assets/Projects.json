@@ -11,12 +11,12 @@
 			"status": "complete"
 		},
 		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
-		"images": [ {
-				"link": "../assets/Images/CharSel.webp",
+		"media": [ {
+				"link": "/src/assets/Images/CharSel.webp",
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/Matcha_Slide.webp",
+				"link": "/src/assets/Images/Matcha_Slide.webp",
 				"alt": ""
 			}
 		],
@@ -48,12 +48,12 @@
 		"has_webpage": true,
 		"prj_link": "https://tinycoderknight.itch.io/goblin-hunt",
 		"video_link": "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
-		"images": [ {
-				"link": "../assets/Images/Goblin_01.webp",
+		"media": [ {
+				"link": "/src/assets/Images/Goblin_01.webp",
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/Goblin_02.webp",
+				"link": "/src/assets/Images/Goblin_02.webp",
 				"alt": ""
 			}
 		],
@@ -79,8 +79,8 @@
 			"pf_type": "solid",
 			"dev_time": "6 Weeks"
 		},
-		"images": [ {
-			"link": "../assets/Images/Zecro.webp",
+		"media": [ {
+			"link": "/src/assets/Images/Zecro.webp",
 			"alt": ""
 		} ],
 		"has_webpage": false,
@@ -107,8 +107,8 @@
 		"title": "Prototype the Platformer",
 		"has_webpage": false,
 		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
-		"images": [ {
-			"link": "../assets/Images/Proto.webp",
+		"media": [ {
+			"link": "/src/assets/Images/Proto.webp",
 			"alt": ""
 		} ],
 		"priority": 3,
@@ -136,8 +136,8 @@
 		"title": "Drone Race",
 		"has_webpage": false,
 		"video_link": "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
-		"images": [ {
-			"link": "../assets/Images/DroneRace.webp",
+		"media": [ {
+			"link": "/src/assets/Images/DroneRace.webp",
 			"alt": ""
 		} ],
 		"desc": "A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to create Starfox inspired character controllers",
@@ -165,12 +165,12 @@
 		"has_webpage": true,
 		"prj_link": "https://dobibo.itch.io/fear-the-abyss",
 		"video_link": "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
-		"images": [ {
-				"link": "../assets/Images/FTAB_UI_01.webp",
+		"media": [ {
+				"link": "/src/assets/Images/FTAB_UI_01.webp",
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/FTAB_UI_02.webp"
+				"link": "/src/assets/Images/FTAB_UI_02.webp"
 			}
 		],
 		"priority": 5,
@@ -197,12 +197,12 @@
 		"has_webpage": true,
 		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
 		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
-		"images": [ {
-				"link": "../assets/Images/GR_1.webp",
+		"media": [ {
+				"link": "/src/assets/Images/GR_1.webp",
 				"alt": ""
 			},
 			{
-				"link": "../assets/Images/GR_2.webp",
+				"link": "/src/assets/Images/GR_2.webp",
 				"alt": ""
 			}
 		],
@@ -230,9 +230,9 @@
 		"has_webpage": false,
 		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
 		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
-		"images": [ {
-			"link": "../assets/Images/GoL.mp4",
-			"alt": "../assets/Images/GoL.webm"
+		"media": [ {
+			"link": "/src/assets/Images/GoL.mp4",
+			"alt": "/src/assets/Images/GoL.webm"
 		} ],
 		"priority": 7,
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
@@ -259,8 +259,8 @@
 		"has_webpage": false,
 		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
 		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
-		"images": [ {
-			"link": "../assets/Images/IyS.webp",
+		"media": [ {
+			"link": "/src/assets/Images/IyS.webp",
 			"alt": ""
 		} ],
 		"priority": 8,
@@ -285,8 +285,8 @@
 		"has_webpage": true,
 		"prj_link": "https://tinycoderknight.itch.io/errand-run",
 		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
-		"images": [ {
-			"link": "../assets/Images/ER.webp",
+		"media": [ {
+			"link": "/src/assets/Images/ER.webp",
 			"alt": ""
 		} ],
 		"priority": 9,

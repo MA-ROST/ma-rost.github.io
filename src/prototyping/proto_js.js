@@ -1,6 +1,18 @@
+SetupJS();
+
+var assetImagePath;
+var domain;
+
+function SetupJS() {
+	domain = `${location.protocol}//${location.host}`;
+	PrintLocationData();
+}
+
+function PrintLocationData() {
+	console.log(`Host: ${location.host}\nHostName: ${location.hostname}\nPort: ${location.port}\nHref: ${location.href}\nPathname: ${location.pathname}\nProtocol: ${location.protocol}`);
+}
 
 getData();
-
 
 async function getData() {
 	console.log("Running...");
@@ -22,10 +34,20 @@ async function getData() {
 	}
 }
 
-
-
-
 function GetFileType(string) {
+	var fileSuffix = string.split('.').pop();
+
+	switch (fileSuffix.toLowerCase()) {
+		case "mp4" || "webM" || "mov":
+			return "video";
+			break;
+		case "png" || "jpg" || "gif" || "tiff":
+			return "image";
+			break;
+		default:
+			break;
+	}
+
 	return string.split('.').pop();
 }
 
@@ -34,7 +56,6 @@ function IsFileVideo(string) {
 
 	return fileType == "mp4" || fileType == "webM";
 }
-
 
 function GetProjectTitle(project) {
 	var projectTitle = `<h2 class="pr-title border-bottom border-secondary">${project.name}</h2>`;
@@ -78,38 +99,31 @@ function GetProjectNotes(project) {
 }
 
 function GetProjectCarousel(project, projectID) {
-	var projectCarousel = "";
 
-	// if first, make active
-
-	var image = "";
-	var fileType = "";
-
-	if (project.images.length != 0) {
-		for (let i = 0; i < project.images.length; i++) {
-			const imageStruct = project.images[i];
-
-			fileType = GetFileType(imageStruct.link);
-
-			if (fileType == "mp4" || fileType == "webM") {
-				console.info("\tVideo Found");
-				image = MakeVideoHTML(imageStruct);
-			}
-			else {
-				image = `<img src="${imageStruct.link}" class="d-block" alt="${imageStruct.alt}" />`;
-			}
-
-			projectCarousel += `<div class="carousel-item${i == 0 ? ' active' : ''}">
-									<a data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
-										${image}
-									</a>
-								</div>`;
-		}
-	}
-	else {
-		projectCarousel += `<div class="carousel-item active">
+	// if the project has no images/videos insert a placeholder
+	if (project.media.length == 0) {
+		return `<div class="carousel-item">
 								<div class="d-block placeholder"></div>
 							</div>`;
+	}
+
+	// if the project has images/videos loop through the contents and create videos
+	var media = "";
+
+	var projectCarousel = "";
+
+
+	for (let i = 0; i < project.media.length; i++) {
+		const mediaStruct = project.media[i];
+
+		// Determine if the media is a video or image, then make the corresponding HTML
+		media = (GetFileType(mediaStruct.link) == "video") ? MakeVideoHTML(mediaStruct) : MakeImageHTML(mediaStruct);
+
+		projectCarousel += `<div class="carousel-item${i == 0 ? ' active' : ''}">
+									<a data-bs-toggle="modal" data-bs-target="#imagePreviewModal">
+										${media}
+									</a>
+								</div>`;
 	}
 
 	console.log("\tCarousel");
@@ -122,14 +136,17 @@ function CountCarouselData(carouselData) {
 }
 
 function GetCarouselView(project) {
-	return (CountCarouselData(project.images)) > 1 ? `` : `d-none`;
+	return (CountCarouselData(project.media)) > 1 ? `` : `d-none`;
 }
 
 function MakeVideoHTML(video, hasControls = false) {
-	var html = `<video src="${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
+	return `<video src="${domain}${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
 					Sorry, your browser doesn't support embedded videos.
 				</video>`;
-	return html
+}
+
+function MakeImageHTML(image) {
+	return `<img src="${domain}${image.link}" class="d-block" alt="${image.alt}" />`;
 }
 
 function GetGameLink(project) {
