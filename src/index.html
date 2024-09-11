@@ -8,6 +8,10 @@
 	<title>Marissa Rowles-Stewart</title>
 
 	<script src="https://kit.fontawesome.com/70ccbae6dc.js" crossorigin="anonymous"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,75..125,200..1000&display=swap');
+	</style>
 	<link rel="stylesheet" href="main.css" />
 </head>
 
@@ -15,7 +19,9 @@
 	<!-- NAV -->
 	<nav id="header" class="navbar navbar-expand-lg navbar-inverse header fixed-top bg-secondary-subtle">
 		<div class="container-xxl">
-			<a class="navbar-brand fw-semibold" href="#">Marissa Rowles-Stewart</a>
+			<a class="text-decoration-none" href="#">
+				<h1 class="navbar-brand brand-font">Marissa R.S.</h1>
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -53,7 +59,7 @@
 						</a>
 					</li>
 					<li class="mx-lg-2 nav-item">
-						<a class="btn btn-primary" href="portfolio/Resume.pdf" role="button" target="_blank" rel="noopener" title="Resume">
+						<a class="btn btn-outline-primary" href="portfolio/Resume.pdf" role="button" target="_blank" rel="noopener" title="Resume">
 							Resume <i class="fa-solid fa-caret-right"></i>
 						</a>
 					</li>
@@ -83,7 +89,7 @@
 			<div class="container p-lg-4 p-2 bg-body rounded">
 				<div id="landing" class="rounded container bg-body-tertiary my-2 p-5">
 					<div id="intro">
-						<h3 id="MyName">UI & Game Developer</h3>
+						<h2 id="MyName">UI & Game Developer</h2>
 						<p>Hi, I'm Marissa, a game developer from Manitoba, Canada.</p>
 						<p>
 							I'm a dedicated and passionate
@@ -97,19 +103,19 @@
 					</div>
 					<div class="row justify-content-between">
 						<div id="skills" class="col-lg-5 mw-50">
-							<h5>Skills</h5>
+							<h4>Skills</h4>
 							<p>
 								Throughout my time in the Game Development course, I was
 								educated on every major aspect of game development.
 							</p>
-							<ul class="border-start">
+							<ul class="border-start border-secondary" style="--bs-border-opacity: 0.25;">
 								<li><u>User Interface</u><br />Layout & Development</li>
 								<li><u>Game Design</u><br />Mechanics, Scope, Level Design, Game Planning </li>
 							</ul>
 						</div>
 						<div id="proficiencies" class="col-lg-7">
-							<h5>Proficiencies</h5>
-							<ul class="border-start">
+							<h4>Proficiencies</h4>
+							<ul class="border-start border-secondary" style="--bs-border-opacity: 0.25;">
 								<li>
 									<u>Languages</u><br />C++, C#, Java, Unreal Blueprints
 								</li>
@@ -133,7 +139,7 @@
 				</div>
 				<!-- Portfolio -->
 				<div id="portfolio" class="rounded container bg-body-tertiary my-2 p-lg-5 p-3">
-					<h3>Portfolio</h3>
+					<h2>Portfolio</h2>
 					<nav class="d-none">
 						<div class="nav nav-buttons" id="nav-tab" role="tablist">
 							<button class="nav-link active" id="nav-prog-port-tab" data-bs-toggle="tab" data-bs-target="#nav-prog-port" type="button" role="tab" aria-controls="nav-prog-port" aria-selected="true">
@@ -165,6 +171,9 @@
 			</div>
 		</div>
 	</div>
+
+
+
 
 	<script type="text/javascript" src="./js/portfolio-project.js"></script>
 	<script>

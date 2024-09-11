@@ -20,5 +20,8 @@
     },
     "peacock.color": "#050d07",
     "liveServer.settings.port": 5500,
-    "liveServer.settings.multiRootWorkspaceName": "ma-rost.github.io"
+    "liveServer.settings.multiRootWorkspaceName": "ma-rost.github.io",
+    "cSpell.words": [
+        "Photoshop"
+    ]
 }
