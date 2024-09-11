@@ -13,7 +13,7 @@ getData();
 async function getData() {
 	console.log("Running...");
 
-	const url = domain + "/src/assets/Projects.json";
+	const url = "./assets/Projects.json";
 	try {
 		const response = await fetch(url);
 		if (!response.ok) {
@@ -217,13 +217,13 @@ function MakeCarouselButtons(carouselID) {
 }
 
 function MakeVideoHTML(video, hasControls = false) {
-	return `<video src="${domain}${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
+	return `<video src="${video.link}" type="video/mp4" loop ${hasControls ? "controls" : ""} autoplay muted controlsList="nodownload" class="w-100" >
 					Sorry, your browser doesn't support embedded videos.
 				</video>`;
 }
 
 function MakeImageHTML(image) {
-	return `<img src="${domain}${image.link}" class="d-block" alt="${image.alt}" />`;
+	return `<img src="${image.link}" class="d-block" alt="${image.alt}" />`;
 }
 
 

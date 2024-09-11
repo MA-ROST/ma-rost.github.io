@@ -12,11 +12,11 @@
 		},
 		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
 		"media": [ {
-				"link": "/src/assets/Images/CharSel.webp",
+				"link": "./assets/Images/CharSel.webp",
 				"alt": ""
 			},
 			{
-				"link": "/src/assets/Images/Matcha_Slide.webp",
+				"link": "./assets/Images/Matcha_Slide.webp",
 				"alt": ""
 			}
 		],
@@ -49,11 +49,11 @@
 		"prj_link": "https://tinycoderknight.itch.io/goblin-hunt",
 		"video_link": "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
 		"media": [ {
-				"link": "/src/assets/Images/Goblin_01.webp",
+				"link": "./assets/Images/Goblin_01.webp",
 				"alt": ""
 			},
 			{
-				"link": "/src/assets/Images/Goblin_02.webp",
+				"link": "./assets/Images/Goblin_02.webp",
 				"alt": ""
 			}
 		],
@@ -80,7 +80,7 @@
 			"dev_time": "6 Weeks"
 		},
 		"media": [ {
-			"link": "/src/assets/Images/Zecro.webp",
+			"link": "./assets/Images/Zecro.webp",
 			"alt": ""
 		} ],
 		"has_webpage": false,
@@ -108,7 +108,7 @@
 		"has_webpage": false,
 		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
 		"media": [ {
-			"link": "/src/assets/Images/Proto.webp",
+			"link": "./assets/Images/Proto.webp",
 			"alt": ""
 		} ],
 		"priority": 3,
@@ -137,7 +137,7 @@
 		"has_webpage": false,
 		"video_link": "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
 		"media": [ {
-			"link": "/src/assets/Images/DroneRace.webp",
+			"link": "./assets/Images/DroneRace.webp",
 			"alt": ""
 		} ],
 		"desc": "A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to create Starfox inspired character controllers",
@@ -166,11 +166,11 @@
 		"prj_link": "https://dobibo.itch.io/fear-the-abyss",
 		"video_link": "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
 		"media": [ {
-				"link": "/src/assets/Images/FTAB_UI_01.webp",
+				"link": "./assets/Images/FTAB_UI_01.webp",
 				"alt": ""
 			},
 			{
-				"link": "/src/assets/Images/FTAB_UI_02.webp"
+				"link": "./assets/Images/FTAB_UI_02.webp"
 			}
 		],
 		"priority": 5,
@@ -198,11 +198,11 @@
 		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
 		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
 		"media": [ {
-				"link": "/src/assets/Images/GR_1.webp",
+				"link": "./assets/Images/GR_1.webp",
 				"alt": ""
 			},
 			{
-				"link": "/src/assets/Images/GR_2.webp",
+				"link": "./assets/Images/GR_2.webp",
 				"alt": ""
 			}
 		],
@@ -231,8 +231,8 @@
 		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
 		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
 		"media": [ {
-			"link": "/src/assets/Images/GoL.mp4",
-			"alt": "/src/assets/Images/GoL.webm"
+			"link": "./assets/Images/GoL.mp4",
+			"alt": "./assets/Images/GoL.webm"
 		} ],
 		"priority": 7,
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
@@ -260,7 +260,7 @@
 		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
 		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
 		"media": [ {
-			"link": "/src/assets/Images/IyS.webp",
+			"link": "./assets/Images/IyS.webp",
 			"alt": ""
 		} ],
 		"priority": 8,
@@ -286,7 +286,7 @@
 		"prj_link": "https://tinycoderknight.itch.io/errand-run",
 		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
 		"media": [ {
-			"link": "/src/assets/Images/ER.webp",
+			"link": "./assets/Images/ER.webp",
 			"alt": ""
 		} ],
 		"priority": 9,
