@@ -37,7 +37,7 @@ function MakePortfolioProjectHTML(projects) {
 			<div class="gr-12 gr-lg-8 order-lg-1">
 				<h2 class="pr-title border-bottom border-secondary">${project.title}</h2>
 				<div class="pr-tags">
-					<ul class="d-flex flex-row flex-wrap li-none">
+					<ul class="d-flex flex-row flex-wrap li-none justify-content-center justify-content-lg-start">
 						${GetProjectTags(project.tags)}
 					</ul>
 				</div>

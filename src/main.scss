@@ -208,8 +208,12 @@ $child in $alpha-stops {
 /* || Carousel END */
 
 .navbar {
-	padding-right: 2rem !important;
-	padding-left: 2rem !important;
+	--bs-navbar-padding-x: 1rem;
+
+	@media (min-width: 992px) {
+		--bs-navbar-padding-x: 2rem;
+	}
+
 	z-index: 1;
 }
 
@@ -299,15 +303,6 @@ $child in $alpha-stops {
 .nav-title {
 	padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 	font-size: var(--bs-navbar-brand-font-size);
-}
-
-
-.section {
-	padding: 64px;
-	border-radius: var(--bs-border-radius) !important;
-	background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
-
-	margin: 1rem auto;
 }
 
 .nav-buttons {
