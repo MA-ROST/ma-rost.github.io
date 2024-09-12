@@ -139,7 +139,7 @@
   --bs-secondary-color-rgb: 192, 255, 238;
   --bs-secondary-bg: #281a3d;
   --bs-secondary-bg-rgb: 40, 26, 61;
-  --bs-tertiary-color: rgba(130, 242, 210, 0.75);
+  --bs-tertiary-color: rgba(130, 242, 210, 0.749);
   --bs-tertiary-color-rgb: 130, 242, 210;
   --bs-tertiary-bg: #201934;
   --bs-tertiary-bg-rgb: 32, 25, 52;
@@ -7637,7 +7637,7 @@ progress {
   --bs-secondary-color-rgb: 192, 255, 238;
   --bs-secondary-bg: #281a3d;
   --bs-secondary-bg-rgb: 40, 26, 61;
-  --bs-tertiary-color: rgba(130, 242, 210, 0.75);
+  --bs-tertiary-color: rgba(130, 242, 210, 0.749);
   --bs-tertiary-color-rgb: 130, 242, 210;
   --bs-tertiary-bg: #201934;
   --bs-tertiary-bg-rgb: 32, 25, 52;
