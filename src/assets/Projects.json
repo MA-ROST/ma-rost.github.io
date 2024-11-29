@@ -1,16 +1,16 @@
 [ {
 		"id": "rcr",
 		"title": "Rift City Rebels",
+		"priority": 0,
 		"tags": {
 			"platform": "UE5",
+			"status": "complete",
+			"dev_year": 2024,
+			"team_size": 16,
 			"pf_icon": "screwdriver-wrench",
 			"pf_type": "solid",
-			"team_size": 16,
-			"dev_time": "4 Months",
-			"dev_year": 2024,
-			"status": "complete"
+			"dev_time": "4 Months"
 		},
-		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
 		"media": [ {
 				"link": "./assets/Images/CharSel.webp",
 				"alt": ""
@@ -20,9 +20,11 @@
 				"alt": ""
 			}
 		],
-		"has_webpage": true,
+		"has_gameLink": true,
 		"prj_link": "https://dobibo.itch.io/rift-city-rebels",
-		"priority": 0,
+		"has_webpage": true,
+		"webpage": null,
+		"video_link": "https://www.youtube.com/embed/C55_lTlCom4?si=_nEagzAaDimcDr0i",
 		"desc": "Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program.",
 		"notes": [
 			"Unreal Engine 5 UI Developer",
@@ -36,6 +38,7 @@
 	{
 		"id": "gh",
 		"title": "Goblin Hunt VR",
+		"priority": 1,
 		"tags": {
 			"platform": "UE5",
 			"status": "complete",
@@ -45,9 +48,6 @@
 			"pf_type": "solid",
 			"dev_time": "1 Month"
 		},
-		"has_webpage": true,
-		"prj_link": "https://tinycoderknight.itch.io/goblin-hunt",
-		"video_link": "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
 		"media": [ {
 				"link": "./assets/Images/Goblin_01.webp",
 				"alt": ""
@@ -57,7 +57,11 @@
 				"alt": ""
 			}
 		],
-		"priority": 1,
+		"has_gameLink": true,
+		"prj_link": "https://tinycoderknight.itch.io/goblin-hunt",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://drive.google.com/file/d/1obQMGit8Lz3gBq4D19517x2JvAsnvvVb/preview",
 		"desc": "Goblin Hunt VR is an arcade style shooter where you must catch bombs shot by goblins and throw them back at them to score points.",
 		"notes": [
 			"UI",
@@ -70,6 +74,7 @@
 	{
 		"id": "zecro",
 		"title": "Zecromancer VR",
+		"priority": 2,
 		"tags": {
 			"platform": "UE5",
 			"status": "unfinished",
@@ -83,9 +88,11 @@
 			"link": "./assets/Images/Zecro.webp",
 			"alt": ""
 		} ],
+		"has_gameLink": false,
+		"prj_link": null,
 		"has_webpage": false,
+		"webpage": null,
 		"video_link": "https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview",
-		"priority": 2,
 		"desc": "A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination.",
 		"notes": [
 			"Created a Gesture System that compares the controller's movement in relation to the headset determining the direction of motion.",
@@ -95,23 +102,26 @@
 	},
 	{
 		"id": "ptp",
+		"title": "Prototype the Platformer",
+		"priority": 3,
 		"tags": {
+			"platform": "Unity2D",
 			"status": "complete",
 			"dev_year": 2023,
 			"team_size": 1,
-			"platform": "Unity2D",
 			"pf_icon": "unity",
 			"pf_type": "brands",
 			"dev_time": "2 Weeks"
 		},
-		"title": "Prototype the Platformer",
-		"has_webpage": false,
-		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
 		"media": [ {
 			"link": "./assets/Images/Proto.webp",
 			"alt": ""
 		} ],
-		"priority": 3,
+		"has_gameLink": false,
+		"prj_link": null,
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
 		"desc": "A short game i created for an assignment to reenforce our skills in mechanic and level design.",
 		"notes": [
 			"Custom Character Controller",
@@ -123,23 +133,26 @@
 	},
 	{
 		"id": "dronce",
+		"title": "Drone Race",
 		"priority": 4,
 		"tags": {
+			"platform": "Unity3D",
 			"status": "complete",
 			"dev_year": 2023,
 			"team_size": 1,
-			"platform": "Unity3D",
 			"pf_icon": "unity",
 			"pf_type": "brands",
 			"dev_time": "1 Month"
 		},
-		"title": "Drone Race",
-		"has_webpage": false,
-		"video_link": "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
 		"media": [ {
 			"link": "./assets/Images/DroneRace.webp",
 			"alt": ""
 		} ],
+		"has_gameLink": false,
+		"prj_link": null,
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://drive.google.com/file/d/1hi4NubHtGhbC-ooxKz8VM3FtMU_puXFX/preview",
 		"desc": "A short obstacle based flying game inspired by Drone races. Made for an assignment where we had to create Starfox inspired character controllers",
 		"notes": [
 			"Character Controller",
@@ -152,6 +165,8 @@
 	},
 	{
 		"id": "fta",
+		"title": "Fear the Abyss",
+		"priority": 5,
 		"tags": {
 			"platform": "UE5",
 			"status": "complete",
@@ -161,10 +176,6 @@
 			"pf_type": "solid",
 			"dev_time": "2 Months"
 		},
-		"title": "Fear the Abyss",
-		"has_webpage": true,
-		"prj_link": "https://dobibo.itch.io/fear-the-abyss",
-		"video_link": "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
 		"media": [ {
 				"link": "./assets/Images/FTAB_UI_01.webp",
 				"alt": ""
@@ -173,7 +184,11 @@
 				"link": "./assets/Images/FTAB_UI_02.webp"
 			}
 		],
-		"priority": 5,
+		"has_gameLink": true,
+		"prj_link": "https://dobibo.itch.io/fear-the-abyss",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://drive.google.com/file/d/1b_aszUaU4D8uylzTlekfhVnHM9024Yov/preview",
 		"desc": "Fear the Abyss is a 2.5d action game where you must navigate around and defend yourself with your trusty harpoon in order to escape the ship being invaded by a giant kracken.",
 		"notes": [
 			"Unreal Engine 5 UI Developer",
@@ -184,6 +199,8 @@
 	},
 	{
 		"id": "guardian",
+		"title": "Guardian Roadblock",
+		"priority": 6,
 		"tags": {
 			"platform": "UE5",
 			"status": "complete",
@@ -193,10 +210,6 @@
 			"pf_type": "solid",
 			"dev_time": "1 Month"
 		},
-		"title": "Guardian Roadblock",
-		"has_webpage": true,
-		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
-		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
 		"media": [ {
 				"link": "./assets/Images/GR_1.webp",
 				"alt": ""
@@ -206,7 +219,11 @@
 				"alt": ""
 			}
 		],
-		"priority": 6,
+		"has_gameLink": true,
+		"prj_link": "https://tinycoderknight.itch.io/guardian-roadblock",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://www.youtube.com/embed/O6m3QySyrok?si=gg4BVuRqA0Ap11XU",
 		"desc": "Guardian Roadblock is a short and sweet puzzle game where a strange stone guardian blocks your way into town. To win the game you must tell it the correct code.",
 		"notes": [
 			"Paper2D",
@@ -217,24 +234,26 @@
 	},
 	{
 		"id": "gol",
+		"title": "Game of Life",
+		"priority": 7,
 		"tags": {
+			"platform": "C++",
 			"status": "complete",
 			"dev_year": 2022,
 			"team_size": 1,
-			"platform": "C++",
 			"pf_icon": "file-code",
 			"pf_type": "solid",
 			"dev_time": "1 Month"
 		},
-		"title": "Game of Life",
-		"has_webpage": false,
-		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
-		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
 		"media": [ {
 			"link": "./assets/Images/GoL.mp4",
 			"alt": "./assets/Images/GoL.webm"
 		} ],
-		"priority": 7,
+		"has_gameLink": false,
+		"prj_link": "https://github.com/ma-rost/gameOfLife/releases/tag/assignment",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://www.youtube.com/embed/X_P_8SaY34o",
 		"desc": "A Recreation of John Conway's Game Of Life in OpenFrameworks C++. This was given to us as an assignment to test our knowledge on C++ at the end of the first term of the course.",
 		"notes": [
 			"OpenFrameworks",
@@ -246,24 +265,26 @@
 	},
 	{
 		"id": "iys",
+		"title": "Invade your Space",
+		"priority": 8,
 		"tags": {
+			"platform": "C++",
 			"status": "complete",
 			"dev_year": 2022,
 			"team_size": 1,
-			"platform": "C++",
 			"pf_icon": "file-code",
 			"pf_type": "solid",
 			"dev_time": "1 Month"
 		},
-		"title": "Invade your Space",
-		"has_webpage": false,
-		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
-		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
 		"media": [ {
 			"link": "./assets/Images/IyS.webp",
 			"alt": ""
 		} ],
-		"priority": 8,
+		"has_gameLink": false,
+		"prj_link": "https://github.com/ma-rost/InvadeYourSpace/releases/tag/Publish",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://www.youtube.com/embed/YCeItVf0FqQ",
 		"desc": "A recreation of Space Invaders. This assignment was a test to our skills in what we had learned in C++, challenging us to rebuild iconic games with OpenFrameworks C++",
 		"notes": [
 			"OpenFrameworks",
@@ -272,24 +293,26 @@
 	},
 	{
 		"id": "errand",
+		"title": "Errand Run",
+		"priority": 9,
 		"tags": {
+			"platform": "Unity3D",
 			"status": "complete",
 			"dev_year": 2021,
 			"team_size": 1,
-			"platform": "Unity3D",
 			"pf_icon": "unity",
 			"pf_type": "brands",
 			"dev_time": "2 Months"
 		},
-		"title": "Errand Run",
-		"has_webpage": true,
-		"prj_link": "https://tinycoderknight.itch.io/errand-run",
-		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
 		"media": [ {
 			"link": "./assets/Images/ER.webp",
 			"alt": ""
 		} ],
-		"priority": 9,
+		"has_gameLink": true,
+		"prj_link": "https://tinycoderknight.itch.io/errand-run",
+		"has_webpage": false,
+		"webpage": null,
+		"video_link": "https://www.youtube.com/embed/buCYXeM7nMo?si=0O4mRQ9IbwKuzlDE",
 		"desc": "The project I used to make my way into the RRC Polytechnic Game Development Course.",
 		"notes": [
 			"Sole Developer and Artist",

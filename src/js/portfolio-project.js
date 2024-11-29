@@ -55,7 +55,9 @@ function MakePortfolioProjectHTML(projects) {
 				<ul class="pr-notes flex-grow-1">
 					${GetProjectNotes(project.notes)}
 				</ul>
-				${GetGameLink(project.prj_link, project.has_webpage)}
+				
+				${GetGameLink(project.prj_link, project.has_gameLink)}
+				${GetWebpage(project.id, project.has_webpage)}
 			</div>
 		</div>
 	</ >
@@ -137,13 +139,23 @@ function GetProjectTags(projectTags) {
 	return projectTagHTML;
 }
 
-function GetGameLink(link, hasWebpage) {
-	console.log("\tLink Compiling status... \n\tIs Link Null: " + (link != "null") + "\n\tHas Webpage: " + (hasWebpage == true));
+function GetGameLink(link, hasGameLink) {
+	console.log("\tLink Compiling status... \n\tIs Link Null: " + (link != "null") + "\n\tHas Webpage: " + (hasGameLink == true));
 
 	console.log("\tLink");
-	return (link == "null" || project.has_webpage == false) ? `` : `
+	return (link == "null" || project.has_gameLink == false) ? `` : `
     <div class="pr-playbtn">
         <a class="btn bg-secondary-30 w-100" href="${link}" role="button">Play Now</a>
+    </div>`;
+}
+
+function GetWebpage(id, hasWebpage) {
+	console.log("\tLink Compiling status... \n\tIs Link Null: " + (id != "null") + "\n\tHas Webpage: " + (hasWebpage == true));
+
+	console.log("\tLink");
+	return (id == null || project.has_webpage == false) ? `` : `
+    <div class="pr-playbtn">
+        <a class="btn bg-secondary-30 w-100 mt-2" href="${"./projects/" + id + ".html"}" role="button">More Information</a>
     </div>`;
 }
 

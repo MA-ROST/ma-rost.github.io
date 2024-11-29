@@ -1,0 +1,112 @@
+/* || Carousel */
+
+.carousel-control-prev {
+	background-image: linear-gradient(to right, rgba(27, 135, 135, 0.2), rgba(27, 135, 135, 0) 20%);
+	background-size: 200%;
+	background-position: right;
+	transition: background-position 1s;
+}
+
+.carousel-control-next {
+	background-image: linear-gradient(to left, rgba(27, 135, 135, 0.2), rgba(27, 135, 135, 0) 20%);
+	background-size: 200%;
+	background-position: left;
+	transition: background-position 1s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-prev:focus {
+	background-position: left;
+}
+
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+	background-position: right;
+}
+
+.aspect-carousel {
+	aspect-ratio: 4 / 3;
+	object-position: center;
+	overflow: hidden !important;
+	width: auto !important;
+	max-width: 500px;
+
+	border-radius: var(--bs-border-radius) !important;
+
+	margin-right: auto !important;
+	margin-left: auto !important;
+
+	@media (min-width: 992px) {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+}
+
+.aspect-carousel div,
+.aspect-carousel button {
+	height: 100% !important;
+}
+
+.aspect-carousel>.carousel-inner>.carousel-item img,
+.aspect-carousel>.carousel-inner>.carousel-item video {
+	object-fit: contain !important;
+	object-position: center;
+	height: 100% !important;
+	width: 100% !important;
+}
+
+/* || Carousel END */
+
+/* || PROJECT */
+
+.pr-title {
+	line-height: 1.5 !important;
+	border-width: 2px !important;
+	--bs-border-opacity: 0.5;
+	border-color: rgba(var(--bs-secondary-rgb), var(--bs-border-opacity)) !important;
+}
+
+.pr-desc {
+	margin-top: 0.5rem !important;
+	margin-bottom: 0px;
+}
+
+.pr-content {
+	margin-bottom: 1vh;
+}
+
+.pr-divider {
+	border-bottom: 2px solid #495057;
+}
+
+/* || Grid  */
+.pr-grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto 1fr;
+	gap: 0px 1.5rem;
+}
+
+.gr-item {
+	border: medium dotted green;
+}
+
+.gr-2r {
+	grid-row: span 2;
+}
+
+.gr-12 {
+	grid-column: span 12;
+}
+
+@media (min-width: 992px) {
+	.gr-lg-8 {
+		grid-column: 5/span 8;
+	}
+
+	.gr-lg-4 {
+		grid-column: span 4;
+	}
+}
+
+/* || Grid END */
