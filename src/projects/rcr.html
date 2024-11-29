@@ -39,12 +39,13 @@
 							<i class="fa-solid fa-bars fa-lg"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><a class="dropdown-item" href="#info">Summary</a></li>
 							<li>
 								<hr class="dropdown-divider">
 							</li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<li><a class="dropdown-item" href="#mugwi">MUGWUI</a></li>
+							<li><a class="dropdown-item" href="#ui">UI Presets</a></li>
+							<li><a class="dropdown-item" href="#matcha">The Snowboarder</a></li>
 						</ul>
 
 					</li>
@@ -192,6 +193,7 @@
 							<!-- Images -->
 							<div class="col-12 col-lg-4 order-lg-0 mt-lg-0 mt-2 align-self-center">
 								<img src="../assets/Images/CharSel.webp" class="d-block rounded img-fluid m-auto cn-image" alt="e" />
+								<img src="../assets/Images/CharacterSel.webp" class="d-block rounded img-fluid mx-auto cn-image" alt="e" />
 							</div>
 						</div>
 					</div>
@@ -205,6 +207,24 @@
 										<h3 class="pr-title border-bottom border-secondary">UI Presets</h3>
 										<div class="pr-tags">
 											<p>I created a tool where developers could create preset assets for a buttons appearance, and easily embed extra features like a button indicator on top of the button.</p>
+											<ul>
+												<li>Button Indicators</li>
+												<li>Font Styles</li>
+												<li>Named Slots for adding extra decoration</li>
+											</ul>
+											<p>Button Indicators are used to tell players what input to use to execute certain actions.
+												It can be applied in multiple ways.
+												For starters, this asset is used on our buttons to show them how to activate it.
+												Its also used in a row at the bottom of our character selection screen.
+												They can be customized to have their own color and text, or use their own sprite in the case the key is a unique input (bumpers, joystick, etc).
+											</p>
+											<p>Font Styles are a Data Asset that can be created, that allows quick iteration on every major variable in the TextBlock widget element (font, alignment, color, padding, etc).
+												Instead of fixing one element and then slowly copying it to the rest, Font Styles allow all the elements to be edited from one location.</p>
+
+											<p>Named Slots are a built in Unreal feature to allow for template assets to be made.
+												I used two of these slots on my custom buttons. One of these slots is basic decoration, adding extra text, or sprites.
+												The second slot only appears when the button is focused.</p>
+
 										</div>
 									</div>
 									<div class="col-12 align-self-end">

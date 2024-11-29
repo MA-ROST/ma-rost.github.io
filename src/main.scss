@@ -107,6 +107,12 @@ h4,
 	color: var(--bs-tertiary-color);
 }
 
+.card {
+	--bs-card-border-width: 0;
+	--bs-card-cap-bg: rgba(var(--bs-secondary-rgb), 10%);
+	--bs-card-bg: rgba(var(--bs-secondary-rgb), 10%);
+}
+
 .navbar-brand {
 	--bs-navbar-brand-font-size: 32px;
 	--bs-navbar-brand-padding-y: 0px;
