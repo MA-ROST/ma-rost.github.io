@@ -93,7 +93,7 @@
 		"has_webpage": false,
 		"webpage": null,
 		"video_link": "https://drive.google.com/file/d/1f8tbryEl48hnJz4UMXleq_SKYSQF2VDt/preview",
-		"desc": "A Virtual Reality game where you are a necromancer controlling a growing hoarde of zombies. Use simple gestures to direct your minions to their destination.",
+		"desc": "A Virtual Reality game where you are a necromancer controlling a growing hoard of zombies. Use simple gestures to direct your minions to their destination.",
 		"notes": [
 			"Created a Gesture System that compares the controller's movement in relation to the headset determining the direction of motion.",
 			"> Used playtests feedback to create multiple iterations of the Gesture system.",
@@ -122,7 +122,7 @@
 		"has_webpage": false,
 		"webpage": null,
 		"video_link": "https://drive.google.com/file/d/14QeJR4dG8N56jrsBPG35VGP0Jh4Y2REk/preview",
-		"desc": "A short game i created for an assignment to reenforce our skills in mechanic and level design.",
+		"desc": "A short game i created for an assignment to reinforce our skills in mechanic and level design.",
 		"notes": [
 			"Custom Character Controller",
 			"> Player has coyote time, can jump with differing heights based on the time the key was down, and double jump",

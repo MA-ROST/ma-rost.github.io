@@ -20367,4 +20367,18 @@ div .li-none {
 
 .github {
   background-color: #1f6feb;
+}
+
+.btn-itchio-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: #1b8787;
+  --bs-btn-border-color: #1b8787;
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #187a7a;
+  --bs-btn-hover-border-color: #187a7a;
+  --bs-btn-focus-shadow-rgb: rgb(27, 135, 135);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #166c6c;
+  --bs-btn-active-border-color: #166c6c;
 }/*# sourceMappingURL=main.css.map */

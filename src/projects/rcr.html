@@ -59,6 +59,94 @@
 				<div id="info" class="rounded container bg-body-tertiary my-2 p-5">
 					<h2 id="title">Rift City Rebels</h2>
 					<p id="description">Rift City Rebels is a 2.5d platform fighter, developed as the capstone project for my last term in the Game Development program.</p>
+
+					<div class="row g-3 text-center">
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Role</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Developer, Designer</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Year</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">2024</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Software</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Unreal Engine 5 (5.2)</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Genre</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Platform Fighter</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Languages</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Blueprints</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Platform</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">PC</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title lh-1 mt-2">Project Type</h4>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Student Project, Prototype</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<a href="https://dobibo.itch.io/rift-city-rebels" class="text-decoration-none">
+								<div class="btn btn-itchio-primary  w-100">
+									<div class="d-inline-flex flex-row align-items-center itch-io-flag">
+										<img src="https://static.itch.io/images/itchio-textless-white.svg" class="itch-io-icon mr-3" alt="e" />
+										<p class="text-center mb-0 mx-2">available on <br><b>itch.io</b></p>
+									</div>
+								</div>
+
+							</a>
+						</div>
+					</div>
+
+
+
+
 				</div>
 				<!-- Portfolio -->
 				<div id="portfolio" class="rounded container bg-body-tertiary my-2 p-lg-5 p-3">
@@ -72,18 +160,29 @@
 									<div class="col-12">
 										<h3 class="pr-title border-bottom border-secondary">Multi-User Gamepad UI Interaction</h3>
 										<div class="pr-tags">
-											<p>I was responsible for the development of UI on the main menu.
-												The current commonUI plugin for Unreal Engine was causing major errors in our project, so we opted to create our own to save time.
-												With the way that Epic Games set up Unreal Engine’s widget system,
-												it is very hard to make a gamepad (a controller) interact with UI in a consistent, satisfying manner,
-												let alone four of them at once. I spent a considerable amount of time in this project
-												working on the UI system, allowing gamepads to interact with it and for multiple players to use the UI at once.
-												I named this the MUGWUI system, standing for Multi-User Gamepad Widget User-Interface.</p>
+											<p class="mb-2">I was responsible for the development of UI on the main menu.<br>
+												Being a school project, we had restrictions placed on our project, by both our instructors and the outline of our project. These restrictions included:
+											</p>
+											<ul>
+												<li>Must be fully functional on a two player arcade kit and an Xbox controller.</li>
+												<li>Up to 4 players must be able to play together on their own controllers.</li>
+												<li>CPU's needed to be able to be added and removed by the player during character selection.</li>
+												<li>Required to employ the use of the Enhanced Input Plugin.</li>
+											</ul>
+											<p>There was also the problem that in Unreal 5.2, the Enhanced Input Plugin could not communicate with UI objects, as the key events were processed in a separate system.<br>
+												CommonUI exists as a resolution to this issue, but when integrated, commonUI created major issues that made the game unplayable.
+												So, with the agreement of the team, I opted to create my own Enhanced Input to UI system.<br>
+												These restrictions created complexity that challenged me to think outside the box, forcing me to learn the in's and out's of the UI system.</p>
+											<p>
+												To summarize, when in UI mode, the Enhanced input events will filter into the Player controller.
+												The event will filter from the Player Controller into the UI container and then the focused UI element.
+												The element will take this event and process the input, either using the surrounding elements to determine which element to focus on next, or processing the interaction with the element.
+											</p>
 										</div>
 									</div>
 									<div class="col-12">
 										<div class="pr-playbtn">
-											<a class="btn bg-secondary-30 w-100" href="../assets/Code/MarissaRS_Report2.pdf" target="_blank" role="button">Code Examples</a>
+											<a class="btn bg-secondary-30 w-100" href="../assets/Code/MarissaRS_FlexMarks_Combo.pdf" target="_blank" role="button">Code Examples</a>
 										</div>
 									</div>
 								</div>
@@ -92,7 +191,7 @@
 							</div>
 							<!-- Images -->
 							<div class="col-12 col-lg-4 order-lg-0 mt-lg-0 mt-2 align-self-center">
-								<img src="../assets/Images/CharSel.webp" class="d-block rounded img-fluid m-auto" style="max-height: 500px;" alt="e" />
+								<img src="../assets/Images/CharSel.webp" class="d-block rounded img-fluid m-auto cn-image" alt="e" />
 							</div>
 						</div>
 					</div>
@@ -117,8 +216,8 @@
 							</div>
 							<!-- Images -->
 							<div class="col-12 col-lg-4 order-lg-0 mt-lg-0 mt-2 align-self-center">
-								<img src="../assets/Images/EsplanadeButton.webp" class="d-block rounded img-fluid mx-auto" style="max-height: 500px;" alt="e" />
-								<img src="../assets/Images/SigneButton.webp" class="d-block rounded img-fluid mx-auto mt-2" style="max-height: 500px;" alt="e" />
+								<img src="../assets/Images/EsplanadeButton.webp" class="d-block rounded img-fluid mx-auto cn-image" alt="e" />
+								<img src="../assets/Images/SigneButton.webp" class="d-block rounded img-fluid mx-auto mt-2 cn-image" alt="e" />
 							</div>
 						</div>
 					</div>
@@ -136,7 +235,7 @@
 							</div>
 							<!-- Images -->
 							<div class="col-12 col-lg-4 order-lg-0 mt-lg-0 mt-2 align-self-center">
-								<img src="../assets/Images/MatchaWin.webp" class="d-block rounded img-fluid mx-auto" style="max-height: 500px;" alt="e" />
+								<img src="../assets/Images/MatchaWin.webp" class="d-block rounded img-fluid mx-auto cn-image" alt="e" />
 							</div>
 						</div>
 					</div>
@@ -163,7 +262,7 @@
 							</div>
 							<!-- Images -->
 							<div class="col-12 col-lg-4 order-lg-0 mt-lg-0 mt-2 align-self-center">
-								<img src="../assets/Images/smallIdle.png" class="d-block rounded img-fluid m-auto" style="max-height: 500px;" alt="e" />
+								<img src="https://placehold.co/600x400" class="d-block rounded img-fluid m-auto cn-image" alt="e" />
 							</div>
 						</div>
 					</div>
