@@ -107,6 +107,14 @@ h4,
 	color: var(--bs-tertiary-color);
 }
 
+code {
+	white-space: pre;
+}
+
+pre {
+	white-space: pre-line;
+}
+
 .card {
 	--bs-card-border-width: 0;
 	--bs-card-cap-bg: rgba(var(--bs-secondary-rgb), 10%);

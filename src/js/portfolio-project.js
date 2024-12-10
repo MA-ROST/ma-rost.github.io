@@ -31,8 +31,13 @@ function MakePortfolioProjectHTML(projects) {
 		const projectID = "portfolio-" + project.id;
 		const projectCarouselID = projectID + "-Carousel";
 
+		if (project.show == 0) {
+			console.log("\tSkipping " + project.title);
+			continue;
+		}
+
 		var projectHtml = `
-	<div id = "${projectID}" class="portfolio-block container rounded bg-secondary-10 p-3 mt-2" >
+	<div id="${projectID}" class="portfolio-block container rounded bg-secondary-10 p-3 mt-2" >
 		<div class="grid pr-grid">
 			<div class="gr-12 gr-lg-8 order-lg-1">
 				<h3 class="pr-title border-bottom border-secondary">${project.title}</h3>
@@ -140,20 +145,20 @@ function GetProjectTags(projectTags) {
 }
 
 function GetGameLink(link, hasGameLink) {
-	console.log("\tLink Compiling status... \n\tIs Link Null: " + (link != "null") + "\n\tHas Webpage: " + (hasGameLink == true));
+	console.log("\tGAME LINK...\n\tLink Compiling status... \n\tIs Link Null: " + (link != "null") + "\n\tHas Webpage: " + (hasGameLink == true));
 
-	console.log("\tLink");
-	return (link == "null" || project.has_gameLink == false) ? `` : `
+	// LINK
+	return (link == "null" || project.has_gameLink == "FALSE") ? `` : `
     <div class="pr-playbtn">
         <a class="btn bg-secondary-30 w-100" href="${link}" role="button">Play Now</a>
     </div>`;
 }
 
 function GetWebpage(id, hasWebpage) {
-	console.log("\tLink Compiling status... \n\tIs Link Null: " + (id != "null") + "\n\tHas Webpage: " + (hasWebpage == true));
+	console.log("\tWEBPAGE...\n\tLink Compiling status... \n\tIs Link Null: " + (id != "null") + "\n\tHas Webpage: " + (hasWebpage == 1));
 
-	console.log("\tLink");
-	return (id == null || project.has_webpage == false) ? `` : `
+	// LINK
+	return (id == null || project.has_webpage == 0) ? `` : `
     <div class="pr-playbtn">
         <a class="btn bg-secondary-30 w-100 mt-2" href="${"./projects/" + id + ".html"}" role="button">More Information</a>
     </div>`;
